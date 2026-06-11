@@ -63,6 +63,24 @@ command run
 
 ---
 
+## Organização
+
+*(Opcional: Inclua esta seção apenas se o repositório pertencer a uma organização)*
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/orgname">
+        <img src="https://github.com/orgname.png" width="100px;" alt="Nome da Organização"/>
+        <br />
+        <sub><b>Nome da Organização</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## Autores
 
 <table>
