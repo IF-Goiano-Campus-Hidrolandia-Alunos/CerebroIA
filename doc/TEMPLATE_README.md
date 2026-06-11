@@ -1,65 +1,63 @@
-# [Project Name]
+---
+tags: [readme, template, documentation]
+updated: 2026-06-11
+type: template
+---
+
+# [Nome do Projeto]
 
 <p align="center">
-  <img src="[path-to-logo]" alt="[Project] Logo" width="350px" />
+  <img src="[caminho-ate-o-logo]" alt="Logo do [Projeto]" width="350px" style="border-radius: 24px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Tech1-Version?style=for-the-badge&logo=tech1&logoColor=white" alt="Tech1" />
-  <img src="https://img.shields.io/badge/Tech2-Version?style=for-the-badge&logo=tech2&logoColor=white" alt="Tech2" />
+  <img src="https://img.shields.io/badge/[Tech1]-[Version]-00ADD8?style=for-the-badge&logo=[logo1]&logoColor=white" alt="[Tech1]" />
+  <img src="https://img.shields.io/badge/[Tech2]-[Version]-232F3E?style=for-the-badge&logo=[logo2]&logoColor=FF9900" alt="[Tech2]" />
 </p>
 
-Uma descrição clara e concisa do projeto em 1-3 linhas. O que faz, para quem, e por quê.
+Uma descrição clara e concisa do projeto em 1-3 linhas. Explicando o que faz, para quem e por quê.
 
 ---
 
 ## Estrutura do Projeto
 
 ```
-project-name/
-├── 📁 folder1/              # Descrição
-│   ├── subfolder/
-│   │   └── file.ext
-│   └── file.ext
-├── 📁 folder2/              # Descrição
-├── 📁 doc/                  # Documentação
-├── 📄 README.md
-└── 📄 .gitignore
+[project-name]/
+├── 📁 folder1/                  # [🆕 Se for pasta nova / Descrição]
+│   └── 📄 file.ext              # [Descrição do arquivo]
+├── 📁 doc/                      # [🆕 Documentação modularizada]
+│   └── 📄 features.md           # [Descrição]
+├── 📄 README.md                 # Este arquivo (Hub)
+└── 📄 .gitignore                # Arquivos ignorados pelo Git
 ```
 
 ---
 
 ## Hub de Documentação
 
-A documentação técnica detalhada está organizada em [doc/](doc/):
+A documentação técnica detalhada está organizada na pasta [doc/](doc/):
 
-- **[Funcionalidades](doc/features.md)**: Detalhes de execução, fluxos de usuário
-- **[Arquitetura](doc/architecture.md)**: Design, modelos, banco de dados
-- **[Guia Dev](doc/development.md)**: Setup local, variáveis de ambiente, deploy
-- **[Padrões](doc/standards.md)**: Estilo de código, convenções do projeto
+* **[Funcionalidades](doc/features.md)**: Detalhes de execução, fluxos de usuário e comandos.
+* **[Arquitetura](doc/architecture.md)**: Design do sistema, modelos de dados e integrações.
+* **[Guia de Desenvolvimento](doc/development.md)**: Configuração do ambiente local, dependências e deploy.
 
 ---
 
-## Quick Start
-
-### Pré-requisitos
-
-- [Requisito 1]
-- [Requisito 2]
+## Inclusão Rápida (Quick Start)
 
 ### Execução Local
 
-**Windows (PowerShell):**
+Defina as configurações essenciais no console e execute o comando principal:
+
+**No Windows (PowerShell):**
 ```powershell
-$env:VAR1="value1"
-$env:VAR2="value2"
+$env:VAR_NAME="valor"
 command run
 ```
 
-**Linux / macOS:**
+**No Linux / macOS:**
 ```bash
-export VAR1="value1"
-export VAR2="value2"
+export VAR_NAME="valor"
 command run
 ```
 
@@ -71,16 +69,16 @@ command run
   <tr>
     <td align="center">
       <a href="https://github.com/username1">
-        <img src="https://github.com/username1.png" width="100px;" alt="Username1"/>
+        <img src="https://github.com/username1.png" width="100px;" alt="Nome do Usuário 1"/>
         <br />
-        <sub><b>Username1</b></sub>
+        <sub><b>Nome do Usuário 1</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/username2">
-        <img src="https://github.com/username2.png" width="100px;" alt="Username2"/>
+        <img src="https://github.com/username2.png" width="100px;" alt="Nome do Usuário 2"/>
         <br />
-        <sub><b>Username2</b></sub>
+        <sub><b>Nome do Usuário 2</b></sub>
       </a>
     </td>
   </tr>
@@ -88,4 +86,4 @@ command run
 
 ---
 
-Este projeto é disponibilizado sob os termos da licença MIT. Para mais detalhes, consulte o arquivo [LICENSE](LICENSE).
+Este projeto é disponibilizado sob os termos da licença [Nome da Licença]. Para mais detalhes, consulte o arquivo de licença do repositório.

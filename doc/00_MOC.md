@@ -27,6 +27,7 @@ Guias passo-a-passo para executar tarefas comuns.
 - [[workflows/atualizar-moc]]
 - [[workflows/criar-readme-projeto]]
 - [[workflows/setup-dev-windows]]
+- [[workflows/sincronizacao-git-automatico]]
 
 ## Cache Externo
 
