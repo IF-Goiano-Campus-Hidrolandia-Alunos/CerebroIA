@@ -22,6 +22,9 @@ Notas atômicas sobre regras de negócio, padrões, tecnologias.
 - [[concepts/ignisengine-builder]]
 - [[concepts/ignisengine-java-17]]
 - [[concepts/ignisengine-image-editor]]
+- [[concepts/ignisengine-ai-integration]]
+- [[concepts/ignisengine-animation]]
+- [[concepts/ignisengine-auditoria]]
 
 ## Workflows & Processos
 
