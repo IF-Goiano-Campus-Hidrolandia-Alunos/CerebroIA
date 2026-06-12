@@ -1,6 +1,6 @@
 ---
 tags: [index, moc]
-updated: 2026-06-10
+updated: 2026-06-12
 ---
 
 # 00_MOC – Mapa Central de Conteúdo
@@ -18,6 +18,7 @@ Notas atômicas sobre regras de negócio, padrões, tecnologias.
 - [[concepts/sistema-legado-componentes]]
 - [[concepts/desktop-app-estrutura]]
 - [[concepts/protocolo-esp32]]
+- [[concepts/ignisengine-roadmap]]
 
 ## Workflows & Processos
 
@@ -42,4 +43,4 @@ Conteúdo obsoleto. Manter para histórico apenas.
 
 ---
 
-**Última revisão:** 2026-06-10
+**Última revisão:** 2026-06-12
