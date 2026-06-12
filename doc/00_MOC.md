@@ -25,6 +25,7 @@ Notas atômicas sobre regras de negócio, padrões, tecnologias.
 - [[concepts/ignisengine-ai-integration]]
 - [[concepts/ignisengine-animation]]
 - [[concepts/ignisengine-auditoria]]
+- [[concepts/ignisengine-serialization]]
 
 ## Workflows & Processos
 
