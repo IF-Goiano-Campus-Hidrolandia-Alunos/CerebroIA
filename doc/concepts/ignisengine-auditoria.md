@@ -14,6 +14,9 @@ Auditoria técnica profunda do IgnisEngine (2026-06-12) com correções definiti
 - getInstance() do áudio sincronizado (race na lazy-init)
 - Export C++: main.cpp usava SCENE_MAINSCENE fixo → alias canônico SCENE_MAIN (mainScene do projeto, fallback 1ª cena, nullptr se vazio) + dedupe de símbolos
 - ScriptManager: sem JDK (JRE/builds), usa classes pré-compiladas em scripts/compiled/ e loga uma vez (sem erro por script)
+- Viewport/Game Loop (Morte da Thread): `createBufferStrategy(3)` e `getDrawGraphics()` lançavam exceções em estado não-displayable, matando a thread de loop no startup. Corrigido com `isDisplayable()` e try-catch, protegendo a thread `run()` de forma resiliente contra qualquer erro.
+- Play Mode / Concorrência: Conflito de acesso à lista `entities` entre a thread do loop e a EDT (Swing) causava exceções de concorrência. Modificado `entities`, `cameras` e `runtimeObjects` para `CopyOnWriteArrayList`.
+- Seleção de Objetos: `setSelectedObject` não disparava redesenho, mantendo gizmos anteriores travados ou invisíveis. Adicionado `repaint()` na seleção.
 
 ## Melhorias
 
@@ -23,7 +26,6 @@ Auditoria técnica profunda do IgnisEngine (2026-06-12) com correções definiti
 
 - Serialização de cena robusta (formatos legados ok)
 - Catches "silenciosos" benignos (input inválido, save best-effort)
-- Render usa BufferStrategy corretamente
 
 ## Links
 
