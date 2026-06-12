@@ -32,7 +32,12 @@ Motor 2D em Java puro (URSoftware). Consoles (Xbox/PlayStation) não suportam JV
 - IA já possui base no projeto (Gemini 2.5 Flash via Agent Mode); item 5 é expansão
 - Todos os módulos desacoplados: manutenção independente e expansão futura
 
+## Status
+
+- Itens 1 e 2 implementados em 2026-06-12: ver [[concepts/ignisengine-builder]]
+
 ## Links
 
+- [[concepts/ignisengine-builder]]
 - [[concepts/readme-structure-template]]
 - [[workflows/sincronizacao-git-automatico]]
