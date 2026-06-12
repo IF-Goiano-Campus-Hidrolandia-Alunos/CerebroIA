@@ -1,9 +1,3 @@
----
-tags: [readme, template, documentation]
-updated: 2026-06-11
-type: template
----
-
 # [Nome do Projeto]
 
 <p align="center">
@@ -65,15 +59,15 @@ command run
 
 ## Organização
 
-*(Opcional: Inclua esta seção apenas se o repositório pertencer a uma organização)*
+*(Inclua esta seção apenas se o repositório pertencer a uma organização - Exemplo: URSoftware)*
 
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/orgname">
-        <img src="https://github.com/orgname.png" width="100px;" alt="Nome da Organização"/>
+      <a href="https://github.com/URSoftware">
+        <img src="https://github.com/URSoftware.png" width="100px;" alt="URSoftware"/>
         <br />
-        <sub><b>Nome da Organização</b></sub>
+        <sub><b>URSoftware</b></sub>
       </a>
     </td>
   </tr>
@@ -86,17 +80,17 @@ command run
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/username1">
-        <img src="https://github.com/username1.png" width="100px;" alt="Nome do Usuário 1"/>
+      <a href="https://github.com/ThyagoToledo">
+        <img src="https://github.com/ThyagoToledo.png" width="100px;" alt="Thyago Toledo"/>
         <br />
-        <sub><b>Nome do Usuário 1</b></sub>
+        <sub><b>Thyago Toledo</b></sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/username2">
-        <img src="https://github.com/username2.png" width="100px;" alt="Nome do Usuário 2"/>
+      <a href="https://github.com/FeronZerbana">
+        <img src="https://github.com/FeronZerbana.png" width="100px;" alt="FeronZerbana"/>
         <br />
-        <sub><b>Nome do Usuário 2</b></sub>
+        <sub><b>FeronZerbana</b></sub>
       </a>
     </td>
   </tr>
