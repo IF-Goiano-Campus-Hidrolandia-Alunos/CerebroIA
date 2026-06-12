@@ -24,9 +24,9 @@ Itens 1 e 2 do roadmap, implementados em 2026-06-12. Doc completa: `IgnisEngine/
 
 ## Limitações Registradas
 
-- Sprites com caminho absoluto fora do projeto não entram no pacote (corrigir no import de assets do editor)
 - Build Java exige Java 17+ na máquina do jogador (jlink/jpackage planejado)
 - Runtime C++ é esqueleto: portagem de tick/render/colisões pendente
+- Cenas legadas com sprite em caminho absoluto funcionam localmente mas não são portáveis (reimportar converte para relativo; ver AssetResolver)
 
 ## Links
 

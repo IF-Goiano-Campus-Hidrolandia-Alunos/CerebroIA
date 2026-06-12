@@ -20,6 +20,8 @@ Notas atômicas sobre regras de negócio, padrões, tecnologias.
 - [[concepts/protocolo-esp32]]
 - [[concepts/ignisengine-roadmap]]
 - [[concepts/ignisengine-builder]]
+- [[concepts/ignisengine-java-17]]
+- [[concepts/ignisengine-image-editor]]
 
 ## Workflows & Processos
 

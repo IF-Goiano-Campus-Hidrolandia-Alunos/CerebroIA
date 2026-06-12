@@ -35,6 +35,8 @@ Motor 2D em Java puro (URSoftware). Consoles (Xbox/PlayStation) não suportam JV
 ## Status
 
 - Itens 1 e 2 implementados em 2026-06-12: ver [[concepts/ignisengine-builder]]
+- Item 3 (editor de imagens) v1 implementada em 2026-06-12: ver [[concepts/ignisengine-image-editor]]
+- Java oficial padronizado em 17 LTS: ver [[concepts/ignisengine-java-17]]
 
 ## Links
 
