@@ -18,6 +18,8 @@ Notas atômicas sobre regras de negócio, padrões, tecnologias.
 - [[concepts/sistema-legado-componentes]]
 - [[concepts/desktop-app-estrutura]]
 - [[concepts/protocolo-esp32]]
+- [[concepts/penetrometro-desktop-dominio]]
+- [[concepts/penetrometro-mobile]]
 - [[concepts/ignisengine-roadmap]]
 - [[concepts/ignisengine-builder]]
 - [[concepts/ignisengine-java-17]]
