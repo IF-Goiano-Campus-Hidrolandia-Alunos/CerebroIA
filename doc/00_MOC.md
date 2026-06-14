@@ -40,6 +40,7 @@ Guias passo-a-passo para executar tarefas comuns.
 - [[workflows/criar-readme-projeto]]
 - [[workflows/setup-dev-windows]]
 - [[workflows/sincronizacao-git-automatico]]
+- [[workflows/deploy-marketplace-vercel]]
 
 ## Cache Externo
 
