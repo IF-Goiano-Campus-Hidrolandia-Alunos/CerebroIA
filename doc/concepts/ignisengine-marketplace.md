@@ -32,10 +32,21 @@ Repo dedicado: `https://github.com/ThyagoToledo/IginisMarketePlace` (deploy Verc
 - Migracao idempotente: `db/migrations/002_users_security.sql`. Env extra: AUTH_SECRET, AUTH_GITHUB_ID/SECRET, ADMIN_GITHUB_LOGINS, GITHUB_TOKEN(opcional). Callback OAuth: `/api/auth/callback/github`.
 - Publicacao pelo editor Java exige token (OAuth desktop) — adiado para passo futuro; catalogo GET segue publico.
 
+## Producao (deploy ativo 2026-06-14)
+
+- URL: `https://iginis-markete-place.vercel.app` (= DEFAULT_BASE_URL do MarketplaceClient; ja bate, sem mudar codigo).
+- Verificado live: `/api/health` -> db connected, 5 itens; `/api/items` ok (JOIN users, camelCase).
+- GitHub OAuth App: nome "Ignis Marketplace", dono @ThyagoToledo, sem Device Flow.
+- Callback: `https://iginis-markete-place.vercel.app/api/auth/callback/github`.
+- AUTH_GITHUB_ID (Client ID, nao-secreto): `Ov23liZpQYsIRkk4EWmK`.
+- Env vars na Vercel (VALORES sao segredos, NAO ficam no Vault): DATABASE_URL, AUTH_SECRET, AUTH_GITHUB_ID, AUTH_GITHUB_SECRET, ADMIN_GITHUB_LOGINS=ThyagoToledo,FeronZerbana, GITHUB_TOKEN(opcional).
+- Banco Neon: regiao sa-east-1 (host ep-misty-cherry-acu4p1xt-pooler). Connection string injetada pela integracao Vercel.
+
 ## Pendências
 
-- Push do repo do marketplace exige conta GitHub ThyagoToledo (GCM em cache estava como FeronZerbana); resolver via colaborador/PAT.
-- Ajustar `DEFAULT_BASE_URL` em MarketplaceClient para a URL real apos deploy.
+- Setar as env vars de OAuth na Vercel + Redeploy + testar login (apos isso ThyagoToledo/FeronZerbana entram como admin).
+- Girar o AUTH_GITHUB_SECRET (foi exposto no chat durante o setup) e atualizar na Vercel.
+- Publicacao autenticada pelo editor Java (fluxo de token / Device Flow) — passo futuro.
 
 ## Links
 
