@@ -30,6 +30,11 @@ Notas atômicas sobre regras de negócio, padrões, tecnologias.
 - [[concepts/ignisengine-serialization]]
 - [[concepts/ignisengine-marketplace]]
 - [[concepts/ignisengine-javafx-migracao]]
+- [[concepts/ignisengine-roadmap-mestre]]
+- [[concepts/ignisengine-inventario]]
+- [[concepts/ignisengine-auditoria-arquitetural]]
+- [[concepts/ignisengine-dividas-tecnicas]]
+- [[concepts/ignisengine-decisoes-arquiteturais]]
 
 ## Workflows & Processos
 
