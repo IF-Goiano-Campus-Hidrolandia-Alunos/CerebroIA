@@ -12,6 +12,7 @@ updated: 2026-06-12
 Notas atômicas sobre regras de negócio, padrões, tecnologias.
 
 - [[concepts/token-optimization]]
+- [[concepts/karpathy-vibe-coding]]
 - [[concepts/vault-system]]
 - [[concepts/readme-structure-template]]
 - [[concepts/novo-sistema-arquitetura]]
