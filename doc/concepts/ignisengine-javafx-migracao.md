@@ -24,7 +24,7 @@ Editor hoje é Swing/AWT: 38 arquivos usam swing/awt, monolito `editor/Editor.ja
 
 - F0 (FEITO, so na main): deps JavaFX 17 no pom.xml + javafx-maven-plugin + pacote `com.ignis.editor.fx`. Compila.
 - F1 (FEITO, so na main): IgnisEditorApp (BorderPane/MenuBar/SplitPane) + ponte de render `Game.renderWorldTo` -> BufferedImage -> SwingFXUtils -> Canvas (AnimationTimer); Hierarchy nativa (TreeView); Inspector placeholder; cena de amostra. Rodar: `mvnw javafx:run`.
-- F2: painéis nativos (Hierarchy=TreeView, Inspector=GridPane/binding, MenuBar/ToolBar).
+- F2 (FEITO, so na main): abrir projeto .ignis real (FileChooser -> IgnisProjectIO.load) no viewport; selecao Hierarchy<->viewport (contorno via Game.renderWorldTo com selected); Inspector GridPane editavel (nome/x/y/w/h/rot/visivel) escreve no GameObject ao vivo. Pendente: ToolBar, atalhos, Play/Stop.
 - F3: janelas-ferramenta uma a uma (BuildDialog→Community→Notes→Animation→ImageEditor→AudioEditor).
 - F4: tema CSS escuro, layout persistido em SplitPane/Stage, remover javafx-swing.
 
