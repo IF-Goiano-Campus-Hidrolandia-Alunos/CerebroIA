@@ -17,6 +17,7 @@ Auditoria técnica profunda do IgnisEngine (2026-06-12) com correções definiti
 - Viewport/Game Loop (Morte da Thread): `createBufferStrategy(3)` e `getDrawGraphics()` lançavam exceções em estado não-displayable, matando a thread de loop no startup. Corrigido com `isDisplayable()` e try-catch, protegendo a thread `run()` de forma resiliente contra qualquer erro.
 - Play Mode / Concorrência: Conflito de acesso à lista `entities` entre a thread do loop e a EDT (Swing) causava exceções de concorrência. Modificado `entities`, `cameras` e `runtimeObjects` para `CopyOnWriteArrayList`.
 - Seleção de Objetos: `setSelectedObject` não disparava redesenho, mantendo gizmos anteriores travados ou invisíveis. Adicionado `repaint()` na seleção.
+- Script Serialization: Modificar variáveis do script no Inspector resetava para o padrão de código ao dar Play. Corrigido com salvamento em `pendingScriptVariables` a cada modificação nos editores (Boolean, GameObject, Text) e suporte a confirmação com tecla ENTER com devolução de foco para o canvas do jogo.
 
 ## Melhorias
 
