@@ -46,7 +46,7 @@ Repo dedicado: `https://github.com/ThyagoToledo/IginisMarketePlace` (deploy Verc
 
 - Setar as env vars de OAuth na Vercel + Redeploy + testar login (apos isso ThyagoToledo/FeronZerbana entram como admin).
 - Girar o AUTH_GITHUB_SECRET (foi exposto no chat durante o setup) e atualizar na Vercel.
-- Publicacao autenticada pelo editor Java (fluxo de token / Device Flow) — passo futuro.
+- Publicacao pelo editor Java: via TOKEN (implementado 2026-06-14). Tabela api_tokens (migration 003, guarda hash SHA-256). lib/apiauth.resolveUser aceita sessao OU `Authorization: Bearer <token>`. Pagina web /account gera/revoga token. Editor: MarketplaceClient guarda token em Preferences; CommunityFrame tem 2 botoes (Publicar no site abre browser; Publicar com token publica via Bearer) + dialogo de token + ajuda.
 
 ## Links
 
