@@ -13,6 +13,7 @@ Editor hoje é Swing/AWT: 38 arquivos usam swing/awt, monolito `editor/Editor.ja
 
 ## Decisões-Chave
 
+- Branches (2026-06-14): `Legado` = versao estavel Swing + marketplace (preservada, nao migra); `main` = desenvolvimento da migracao JavaFX. Cada fase mergeavel; Legado e o ponto de retorno seguro.
 - Incremental, não big-bang: Swing e JavaFX convivem durante a transição.
 - Interop: `SwingNode` (embutir Swing na cena FX), `JFXPanel` (FX dentro de Swing), `SwingFXUtils` (BufferedImage ↔ WritableImage).
 - Ponte de render do Viewport: render offscreen em BufferedImage (mesmo Graphics2D) → `SwingFXUtils.toFXImage` → `javafx.scene.canvas.Canvas` via AnimationTimer. Desacopla loop do jogo da janela; remove BufferStrategy no editor.
