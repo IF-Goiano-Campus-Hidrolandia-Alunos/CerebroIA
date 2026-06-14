@@ -1,6 +1,6 @@
 ---
-tags: [ignisengine, marketplace, vercel, neon, nextjs, decision]
-updated: 2026-06-13
+tags: [ignisengine, marketplace, vercel, neon, nextjs, auth, decision]
+updated: 2026-06-14
 ---
 
 ## Definição
@@ -20,6 +20,17 @@ Repo dedicado: `https://github.com/ThyagoToledo/IginisMarketePlace` (deploy Verc
 - Seed via CSV (`db/seed.csv`) importado no Neon; schema em `db/schema.sql`.
 - Cliente Java `com.ignis.marketplace.MarketplaceClient` (java.net.http + org.json) com fallback automatico no mock offline — editor nunca quebra sem internet.
 - URL base do editor via `-Dignis.marketplace.url` ou env `IGNIS_MARKETPLACE_URL`.
+
+## Usuarios, Seguranca, Admin (add 2026-06-14)
+
+- Auth.js v5 + GitHub OAuth (sessao JWT). Tabela `users` (github_id unico, flags). Identidade unica por conta GitHub.
+- Admins ThyagoToledo/FeronZerbana via env `ADMIN_GITHUB_LOGINS` + coluna `is_admin` (auto-set no login). `/admin` e `/api/admin/*` restritos.
+- Pacotes vinculados ao dono (`items.author_id`); usuario legado (github_id 0) segura o seed.
+- Gate de seguranca na publicacao (`lib/security.js`): valida campos + repo Git (host permitido, existe/publico/nao arquivado via GitHub API) + blocklist. Reprovado nao sobe. Guarda `security_report` jsonb e `status`.
+- Banir usuario (banido nao loga/publica, itens somem do catalogo) e remover item (admin/dono).
+- Legal: paginas /terms e /privacy, banner de cookies, aceite obrigatorio antes de publicar (`accepted_terms_at`), isencao de responsabilidade.
+- Migracao idempotente: `db/migrations/002_users_security.sql`. Env extra: AUTH_SECRET, AUTH_GITHUB_ID/SECRET, ADMIN_GITHUB_LOGINS, GITHUB_TOKEN(opcional). Callback OAuth: `/api/auth/callback/github`.
+- Publicacao pelo editor Java exige token (OAuth desktop) — adiado para passo futuro; catalogo GET segue publico.
 
 ## Pendências
 
