@@ -19,6 +19,13 @@ Auditoria técnica profunda do IgnisEngine (2026-06-12) com correções definiti
 - Seleção de Objetos: `setSelectedObject` não disparava redesenho, mantendo gizmos anteriores travados ou invisíveis. Adicionado `repaint()` na seleção.
 - Script Serialization: Modificar variáveis do script no Inspector resetava para o padrão de código ao dar Play. Corrigido com salvamento em `pendingScriptVariables` a cada modificação nos editores (Boolean, GameObject, Text) e suporte a confirmação com tecla ENTER com devolução de foco para o canvas do jogo.
 
+## Auditoria de Mouse e UX (2026-06-15)
+
+- **Bug do Mouse Warping:** Exceção `IllegalComponentStateException` em `getLocationOnScreen()` causada por teleportes do Robot AWT em canvas off-screen sob JavaFX. Corrigido adicionando a cláusula `isShowing()`, suspendendo o warp com segurança sob JavaFX.
+- **Loop de Seleção Infinita & Arrastes Presos:** JavaFX context menus consumiam eventos `MOUSE_RELEASED`, deixando a ferramenta de arraste (`currentDragMode = CENTER`) ativa em AWT. A mudança de seleção em seguida aplicava as coordenadas antigas ao novo objeto, gerando saltos de posição, sobreposição física e loops rápidos de colisão/seleção. Corrigido com o método `game.cancelDrag()` ao abrir menus contextuais e mudar a seleção, e com a flag reentrante `suppressSelectionEvents` em `IgnisEditorApp.java`.
+- **Separação de Botões do Mouse:** Configurado clique esquerdo simples (`PRIMARY`) estritamente para seleção de objetos de cena. Menus de contexto (HUDs) abertos exclusivamente no clique direito (`SECONDARY`) na Hierarchy, Viewport e Assets.
+- **Abertura de Scripts via Assets:** Integração da árvore de assets com o editor interno `FxCodeEditor`. Clique duplo esquerdo em arquivos `.java` ou opção "Abrir no Editor do Ignis" no menu de contexto abre o script nativamente.
+
 ## Melhorias
 
 - AssetResolver.loadImage: cache de sprites compartilhado, invalidação por mtime (recarrega em edição externa); centralizou 7 loadSprite idênticos
