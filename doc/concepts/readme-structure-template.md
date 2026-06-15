@@ -72,17 +72,21 @@ command run
 ```
 
 ### 5. Autores (Opcional)
-- Tabela com avatares GitHub
-- Links para perfis
+- Tabela com avatares circulares do GitHub (`style="border-radius: 50%;"`)
+- Links para os perfis
 
 ```markdown
-## Autores
+## Autores e Organização
 
-<table>
+Este projeto é mantido pela organização **URSoftware**.
+
+<table align="center">
   <tr>
-    <td><a href="https://github.com/user">
-      <img src="https://github.com/user.png" width="100px;"/>
-      <sub><b>Name</b></sub></a>
+    <td align="center">
+      <a href="https://github.com/user">
+        <img src="https://github.com/user.png?size=100" width="100px;" alt="Name" style="border-radius: 50%;" /><br />
+        <sub><b>Name</b></sub>
+      </a>
     </td>
   </tr>
 </table>
@@ -92,30 +96,37 @@ command run
 - Menção breve com link para arquivo
 - Formato: "Sob licença MIT. Veja LICENSE para detalhes."
 
-## Padrões de Estilo
+## Padrões de Estilo e Decorações HTML
 
-- Separadores: `---` (3 hífens)
-- Títulos principais: `## Título`
-- Subtítulos: `### Subtítulo`
-- Blocos de código: ` ``` ``` `
-- Emojis apenas em árvore de diretórios (não em texto)
-- Centralizar imagens: `<p align="center">`
+Para garantir uma apresentação visual premium e consistente nos READMEs principais:
+- **Banner do Projeto:** Deve ser centralizado usando `<p align="center">` e conter cantos arredondados com sombra para profundidade:
+  ```html
+  <p align="center">
+    <img src="Icons/Banner.jpg" alt="Project Banner" width="250px" style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);" />
+  </p>
+  ```
+- **Badges:** Alinhados no centro com links estilizados (shields.io).
+- **Avatares dos Autores:** Formatados em tabelas centralizadas com bordas arredondadas de `50%` para formar círculos:
+  ```html
+  <img src="https://github.com/username.png" width="100px" style="border-radius: 50%;" />
+  ```
+- **Separadores:** Linhas horizontais markdown padrão (`---`) separando cada bloco lógico.
+- **Tom de Texto:** Livre de emojis no corpo do texto de documentações para preservar o tom profissional de engenharia (emojis permitidos apenas na árvore de diretórios).
 
-## Documentação Modularizada
+## Diretriz da Estrutura de Documentos
 
-Estrutura `doc/` recomendada:
-- `funcionalidades.md` ou `features.md` - O que faz
-- `arquitetura.md` ou `architecture.md` - Como funciona
-- `desenvolvimento.md` ou `development.md` - Como rodar/contribuir
-- `readme_standards.md` - Padrões do projeto (opcional)
+> [!IMPORTANT]
+> **Regra do Único README.md:**
+> Existe estritamente **apenas um único arquivo README.md** no repositório, posicionado na raiz principal (fora da pasta `doc/`).
+> Todos os demais arquivos `.md` devem residir obrigatoriamente dentro da pasta `doc/` e constituem a documentação técnica (Vault de conhecimento). O README.md atua puramente como o portal visual e índice de links.
 
 ## Benefícios
 
-- Profissionalismo: Layout visual atraente
+- Profissionalismo: Layout visual atraente com sombras e imagens limpas
 - Clareza: Estrutura hierárquica óbvia
 - Reutilizabilidade: Mesmo padrão em vários projetos
 - Manutenibilidade: Documentação modularizada fácil de atualizar
-- Navegar fácil: Links para docs detalhadas, não párrafos longos
+- Navegar fácil: Links para docs detalhadas, não parágrafos longos
 
 ## Links
 
