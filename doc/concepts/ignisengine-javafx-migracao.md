@@ -1,7 +1,7 @@
 ---
 tags: [ignisengine, javafx, migracao, ui, decision, architecture]
 updated: 2026-06-15
-revisao: F3.5 (ciclo de vida de projeto + mecanicas + asset browser)
+revisao: correcoes de selecao/inspector/picking/indicador-visual + numeros de linha pretos + autosave (2026-06-15)
 ---
 
 ## Definição
