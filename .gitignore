@@ -1,0 +1,4 @@
+# Identidade local do PC (cada usuario define o seu rodando perfil-*.bat).
+# NAO versionado: ao clonar/baixar, o vault vem SEM perfil definido, para
+# cada PC decidir qual e o seu (ThyagoToledo ou FeronZerbana).
+IDENTIDADE-LOCAL.md
