@@ -1,7 +1,7 @@
 ---
 tags: [ignisengine, javafx, migracao, ui, decision, architecture]
-updated: 2026-06-15
-revisao: correcoes de selecao/inspector/picking/indicador-visual + numeros de linha pretos + autosave (2026-06-15)
+updated: 2026-06-16
+revisao: rodada de bugs/perf (loop de selecao, ordenacao da cena, clique direito Hierarchy/Assets, suppressAwtRepaint) — 2026-06-16
 ---
 
 ## Definição
@@ -42,6 +42,7 @@ Editor hoje é Swing/AWT: 38 arquivos usam swing/awt, monolito `editor/Editor.ja
   - Regressao corrigida (revisao adversarial): clicar-e-arrastar objeto nao-selecionado num gesto unico nao cancela mais o drag (setSelected so cancela quando a selecao nao veio do engine).
   - FxCodeEditor: numeros de linha SEMPRE pretos sobre gutter claro (CSS !important + factory inline) — legiveis em qualquer tema.
   - Auto Save: item no menu Arquivo (EditorPrefs); autosave de scripts religado; autosave de projeto com dirty-flag, fora do Play, salvamento silencioso (sem Alert modal). Build mvnw compile = SUCCESS (86 fontes). PENDENTE: validacao manual em GUI.
+- Rodada de bugs/perf (2026-06-16, commits 39b5367 Gemini + e9a9fd5 Claude): loop de selecao infinita (guarda game.getSelectedObject()==go + handleMouseRelease nao re-notifica); arrastes presos de gizmo (viewportMenu.setOnHidden->cancelDrag); ordenacao da Cena invertida + moveEntityUp no-op (remove newIndex-- em Game.moveEntityToIndex, inverte topo/fundo nos menus); clique direito agora seleciona o item sob o cursor na Hierarchy E no Asset Browser (cellFactory no SECONDARY); travadas reduzidas com suppressAwtRepaint (Game ignora repaint() do AWT sob o editor FX). Detalhes em ignisengine-auditoria.md e doc/CORRECOES_BUGS_FX_2026-06-16.md.
 - Roadmap pos-F4 (paridade pendente): undo/redo (Command), Inspector completo (Cor/Sprite/Collider/Camera/Scripts), anexar script a objeto, import imagem->sprite, prefabs (PrefabManager); backlog: multi-selecao, merge, drag-drop, console de erros, multi-cena, parentesco, multi-aba.
 - F4 (proxima): tema CSS escuro unificado (ignis-dark.css substituindo ~96 setStyle inline), layout persistido em SplitPane/Stage, remover javafx-swing. BLOQUEIO: remover javafx-swing exige antes eliminar a ponte SwingFXUtils (extrair um Renderer desacoplado do toolkit).
 

@@ -1,6 +1,6 @@
 ---
 tags: [ignisengine, audit, bugfix, performance]
-updated: 2026-06-12
+updated: 2026-06-16
 ---
 
 ## Definição
@@ -25,6 +25,17 @@ Auditoria técnica profunda do IgnisEngine (2026-06-12) com correções definiti
 - **Loop de Seleção Infinita & Arrastes Presos:** JavaFX context menus consumiam eventos `MOUSE_RELEASED`, deixando a ferramenta de arraste (`currentDragMode = CENTER`) ativa em AWT. A mudança de seleção em seguida aplicava as coordenadas antigas ao novo objeto, gerando saltos de posição, sobreposição física e loops rápidos de colisão/seleção. Corrigido com o método `game.cancelDrag()` ao abrir menus contextuais e mudar a seleção, e com a flag reentrante `suppressSelectionEvents` em `IgnisEditorApp.java`.
 - **Separação de Botões do Mouse:** Configurado clique esquerdo simples (`PRIMARY`) estritamente para seleção de objetos de cena. Menus de contexto (HUDs) abertos exclusivamente no clique direito (`SECONDARY`) na Hierarchy, Viewport e Assets.
 - **Abertura de Scripts via Assets:** Integração da árvore de assets com o editor interno `FxCodeEditor`. Clique duplo esquerdo em arquivos `.java` ou opção "Abrir no Editor do Ignis" no menu de contexto abre o script nativamente.
+
+## Correções de Bugs e Performance — Editor FX (2026-06-16)
+
+Rodada Gemini (commit `39b5367`) + complemento Claude (commit `e9a9fd5`), repo `URSoftware/IgnisEngine`. Relatório no projeto: `doc/CORRECOES_BUGS_FX_2026-06-16.md`.
+
+- **Loop de seleção infinita (trocar de objeto sozinho):** o `addSelectionListener` despachava via `Platform.runLater`; lambdas enfileiradas rodavam com `selected` desatualizado, gerando ping-pong entre objetos sobrepostos. Corrigido com guarda `if (game.getSelectedObject() == go && selected != go)` — notificações obsoletas são descartadas. Reforçado por `handleMouseRelease` deixar de chamar `notifySelectionListeners()` redundantemente (o Inspector FX já sincroniza via AnimationTimer).
+- **Arrastes presos de gizmo / saltos de coordenadas:** o `currentDragMode` ficava preso em `CENTER` ao dispensar o menu de contexto. Corrigido com `viewportMenu.setOnHidden(e -> game.cancelDrag())`.
+- **Ordenação da Cena invertida:** "Mover para o topo/fundo" agiam ao contrário (render desenha índice 0 ao fundo, N no topo). Invertidos os parâmetros em `buildSceneMenu`/`buildHierarchyContextMenu` (topo→`Integer.MAX_VALUE`, fundo→`0`).
+- **"Mover para cima" era no-op:** `Game.moveEntityToIndex` decrementava `newIndex` quando `> currentIndex`, anulando o movimento. Removido o `newIndex--` (o clamp pós-remoção já garante o intervalo válido).
+- **Clique direito não selecionava o item sob o cursor (Hierarchy e Assets):** o `TreeView` do JavaFX só seleciona no clique esquerdo, então o menu de contexto operava na seleção anterior. Corrigido com `cellFactory` que seleciona a célula no `SECONDARY` press — na Hierarchy (Gemini) e no Asset Browser (Claude, `e9a9fd5`).
+- **Travadas/uso de CPU (repaints AWT):** o `Game extends Canvas` disparava `repaint()` (pipeline AWT/BufferStrategy) inútil sob o editor FX (que renderiza por `AnimationTimer`/`renderWorldTo`). Adicionada flag `suppressAwtRepaint` + `setSuppressAwtRepaint`; o `repaint()` é ignorado e a flag é ligada no `IgnisEditorApp`.
 
 ## Melhorias
 

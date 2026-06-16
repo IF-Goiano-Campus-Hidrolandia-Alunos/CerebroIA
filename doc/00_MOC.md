@@ -1,6 +1,6 @@
 ---
 tags: [index, moc]
-updated: 2026-06-12
+updated: 2026-06-16
 ---
 
 # 00_MOC – Mapa Central de Conteúdo
@@ -61,4 +61,4 @@ Conteúdo obsoleto. Manter para histórico apenas.
 
 ---
 
-**Última revisão:** 2026-06-12
+**Última revisão:** 2026-06-16
