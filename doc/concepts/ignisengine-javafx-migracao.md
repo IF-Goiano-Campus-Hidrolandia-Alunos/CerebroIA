@@ -1,7 +1,7 @@
 ---
 tags: [ignisengine, javafx, migracao, ui, decision, architecture]
 updated: 2026-06-17
-revisao: F4 A+B (tema CSS escuro unificado + persistencia de layout) — 2026-06-17
+revisao: F4 COMPLETA (tema CSS + layout + remocao javafx-swing) + janela de Configuracoes centralizada — 2026-06-17
 ---
 
 ## Definição
@@ -49,7 +49,8 @@ Editor hoje é Swing/AWT: 38 arquivos usam swing/awt, monolito `editor/Editor.ja
   - Novo helper `FxTheme.apply(Scene)` (resolve o CSS por getResource com fallback para src/; idempotente). Casca IgnisEditorApp agora com ZERO setStyle inline (9 -> 0, via styleClass). Tema base tambem aplicado a FxCommunityWindow, FxAnimationEditor, FxProjectStartupDialog, FxBuildDialog, FxImageEditor, FxAudioEditor (inline > stylesheet, entao nao quebra o visual custom; so tema os controles default). FxCodeEditor NAO recebe (tem sistema de tema dinamico proprio).
   - F4-B: EditorPrefs ganhou bloco "layout" (getWindowBounds/isWindowMaximized/saveWindowState + getDividers/saveDividers por nome). IgnisEditorApp restaura tamanho/posicao/maximizacao (guarda isOnScreen contra monitor removido) e divisores dos SplitPane (apos 1o layout via runLater); salva em todos os pontos de saida (X da janela, menu Sair, cancelar startup).
 - Janela de Configuracoes centralizada FEITA (2026-06-17, aditivo): nova FxSettingsWindow navegavel por topicos — painel esq ~1/3 rolavel (ToggleButtons .nav-item) + painel dir ~2/3 (SplitPane 0.33). Centraliza prefs antes espalhadas: Geral (Auto Save + intervalo, saiu do menu Arquivo; lembrar layout), Aparencia (tema da UI Escuro/Padrao, aplicado ao vivo via FxTheme.refreshAllWindows com marcacao de cena), Editor de Scripts (tema de sintaxe + tamanho da fonte, fonte agora lida do EditorPrefs no CSS dinamico do FxCodeEditor), Viewport (grade/tamanho/colliders no estado vivo do Game + persistido como default no startup). Menu Arquivo: "Auto Save" -> "Configuracoes…" (Ctrl+,). EditorPrefs ganhou editorTheme/rememberLayout/codeEditorFontSize/grid*. Cor de foco do CSS trocada por literal (silencia warning benigno String->Paint do modena em ComboBox). Build SUCCESS; smoke-test de javafx:run abrindo a janela sem excecao/warning.
-- F4-C (pendente, BLOQUEADO): remover javafx-swing exige antes eliminar a ponte SwingFXUtils (extrair um Renderer desacoplado do toolkit). Faltam tambem: limpeza dos setStyle inline restantes nos subeditores (Community 33, Image 18, Audio 13, Animation 10) e em FxNotesWindow; validacao manual em GUI do tema/layout.
+- F4-C FEITO (2026-06-17) -> F4 COMPLETA: removida a dependencia javafx-swing. Nova FxImageBridge.toFXImage(BufferedImage,WritableImage) substitui SwingFXUtils via PixelWriter/PixelFormat (javafx-graphics): caminho rapido sem copia para TYPE_INT_ARGB contiguo (buffer do viewport por frame), fallback getRGB para sprites arbitrarios. Trocadas as 3 usagens (IgnisEditorApp ponte de render, FxAnimationEditor sprite, FxPaintCanvas composite); dependency javafx-swing removida do pom; comentario de Game.renderWorldTo atualizado. Build clean = SUCCESS; javafx:run renderiza o viewport sem javafx-swing (so warnings benignos de native-access). O "Renderer desacoplado do toolkit" se materializou como esta ponte: o engine ja renderizava em Graphics2D generico (sem BufferStrategy/Canvas no editor FX), e o unico acoplamento JavaFX restante (SwingFXUtils) foi eliminado.
+- Backlog restante (nao bloqueia mais nada): limpeza dos setStyle inline internos dos subeditores (Community 33, Image 18, Audio 13, Animation 10) e FxNotesWindow; validacao manual em GUI de tema/layout/configuracoes; paridade pos-F4 (undo/redo, Inspector completo, anexar script, import imagem->sprite, prefabs).
 
 ## Riscos
 
