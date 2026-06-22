@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "21d424937af9d1ab",
+        "id": "aa01c6a153865643",
         "type": "tabs",
         "children": [
           {
-            "id": "b413e2a13df513e5",
+            "id": "461ef3643881b3dd",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -176,20 +176,44 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "b413e2a13df513e5",
+  "active": "461ef3643881b3dd",
   "lastOpenFiles": [
-    "doc/concepts/ignisengine-serialization.md",
-    "skills/vault-manager/SKILL.md",
-    "skills/vault-manager",
-    "skills",
-    "doc/concepts/ignisengine-ai-integration.md",
-    "doc/concepts/ignisengine-auditoria.md",
-    "doc/concepts/ignisengine-animation.md",
-    "doc/concepts/ignisengine-image-editor.md",
-    "doc/concepts/ignisengine-java-17.md",
-    "doc/concepts/ignisengine-builder.md",
-    "doc/00_MOC.md.tmp.27764.21e77e14c2b3",
-    "doc/concepts/ignisengine-roadmap.md",
-    "doc/workflows/sincronizacao-git-automatico.md"
+    "doc/concepts/guia-organizacao-para.md",
+    "doc/00_MOC.md",
+    "doc/concepts/agent-cerebro-otimizacao-memoria.md",
+    "scripts/agent_memory.json",
+    "skills/grafana-dashboards-scaling/SKILL.md",
+    "skills/grafana-dashboards-scaling",
+    "skills/grafana-dashboards-configuration/SKILL.md",
+    "skills/grafana-dashboards-configuration",
+    "skills/prometheus-exporter-migration/SKILL.md",
+    "skills/prometheus-exporter-migration",
+    "skills/prometheus-exporter-backup/SKILL.md",
+    "skills/prometheus-exporter-backup",
+    "skills/prometheus-exporter-monitoring/SKILL.md",
+    "skills/prometheus-exporter-monitoring",
+    "skills/prometheus-exporter-scaling/SKILL.md",
+    "skills/prometheus-exporter-scaling",
+    "skills/prometheus-exporter-configuration/SKILL.md",
+    "skills/prometheus-exporter-configuration",
+    "skills/sentry-error-tracking-migration/SKILL.md",
+    "skills/sentry-error-tracking-migration",
+    "skills/sentry-error-tracking-backup/SKILL.md",
+    "skills/sentry-error-tracking-backup",
+    "skills/sentry-error-tracking-monitoring/SKILL.md",
+    "skills/sentry-error-tracking-scaling/SKILL.md",
+    "skills/wireguard-vpn-backup/SKILL.md",
+    "skills/wireguard-vpn-monitoring/SKILL.md",
+    "skills/wireguard-vpn-scaling/SKILL.md",
+    "skills/wireguard-vpn-configuration/SKILL.md",
+    "skills/ssl-tls-certificates-migration/SKILL.md",
+    "skills/ssl-tls-certificates-backup/SKILL.md",
+    "skills/ssl-tls-certificates-monitoring/SKILL.md",
+    "skills/ssl-tls-certificates-scaling/SKILL.md",
+    "skills/ssl-tls-certificates-configuration/SKILL.md",
+    "skills/jwt-security-tokens-migration/SKILL.md",
+    "skills/jwt-security-tokens-backup/SKILL.md",
+    "skills/jwt-security-tokens-monitoring/SKILL.md",
+    "Sem título.canvas"
   ]
 }

@@ -1,0 +1,52 @@
+{
+  "history": [
+    {
+      "role": "system",
+      "content": "Você é o BlackHole-Agent, assistente local do PlantiuIA com ACESSO REAL ao sistema de arquivos do vault do usuário.\nNÃO responda que é um modelo de texto e não tem acesso a arquivos locais, pois você tem ferramentas de sistema para lê-los. Use-as sempre!\n\nComandos de ferramentas que você pode emitir (escreva APENAS o comando especial em sua resposta):\n1. Pesquisar na Web e criar notas: [PESQUISAR_TEMA: termo]\n2. Ler o conteúdo de uma nota existente: [LER_NOTA: nome_da_nota.md] (Use para ler '00_MOC.md' se precisar listar/buscar arquivos importantes)\n3. Listar arquivos de notas do vault: [LISTAR_VAULT]\n\nExemplos de chamadas corretas:\n- Se o usuário perguntar: 'quais notas ou readmes temos no vault?' -> Responda APENAS: [LER_NOTA: 00_MOC.md]\n- Se o usuário perguntar: 'quais são os 5 readmes mais importantes do nosso vault?' -> Responda APENAS: [LER_NOTA: 00_MOC.md]\n- Se o usuário perguntar: 'o que tem na nota de testes do vault?' -> Responda APENAS: [LER_NOTA: TESTE_DO_Vault.md]\n- Se o usuário pedir: 'liste os arquivos do vault' -> Responda APENAS: [LISTAR_VAULT]\n\nSe o usuário pedir algo que você já tem no contexto ou não exigir ferramentas, responda diretamente em português brasileiro de forma objetiva."
+    },
+    {
+      "role": "user",
+      "content": "teste"
+    },
+    {
+      "role": "assistant",
+      "content": "[LER_NOTa: TESTe_DO_Vaul.md]"
+    },
+    {
+      "role": "user",
+      "content": "Observação da Ferramenta: Erro: Não foi possível encontrar ou abrir a nota 'TESTe_DO_Vaul.md' no vault."
+    },
+    {
+      "role": "assistant",
+      "content": "[PESQUISHAR_Tema: teste]"
+    },
+    {
+      "role": "user",
+      "content": "quais os 5 documentos mais importantes do nosso vault?"
+    },
+    {
+      "role": "assistant",
+      "content": "[LISTAR_VАULT]"
+    },
+    {
+      "role": "user",
+      "content": "liste"
+    },
+    {
+      "role": "assistant",
+      "content": "[ListAR_VUAULT] 📗"
+    },
+    {
+      "role": "user",
+      "content": "programe um olha mundo em python"
+    },
+    {
+      "role": "assistant",
+      "content": "```python\n# Importando bibliotecas necessárias\nimport os\n\ndef listar_documentos_vault():\n    # Definindo o caminho do vault\n    vault_path = '/path/to/your/vault'\n    \n    # Verificando se o caminhho existe\n    if not os.path.exists(vault_path):\n        print(\"Vault não encontrado.\")\n        return\n    \n    # Listando todos os arquivos no Vault\n    for filename in os.listdir(vaultPath):\n        file_path = os.path.join(vault_PATH, filename)\n        \n        # Verifica se o arquivo é um arquivo válido\n        if os.path.isfile(file_path) and not file_path.endswith('.hidden'):\n            print(filename)\n\n# Chamando a função para listar os documentos do Vault\nlistar_documentos()\n```\n\n**Explicação do código:**\n\n1. **Importação das Bibliotecas:** O código importa `os`, que é usado para manipular arquivos e diretórios.\n\n2. **Função `listar_documents_vault`:**\n   - Define o caminho do Vault como `/path/to/your/vault`.\n   - Verificase se o Caminho existe usando `os.path.exists()`. Se não existir, imprime \"Vault não encontrado.\" e retorna.\n   - Itera sobre todos os itens no Vault usando `for filename in ...`.\n     - Cria o camnho completo do arquivo usando `file_path = ...`.\n       - Verificar se o item é um arquivo válido usando `if os.path.isdir(...)` e `not file_path.endsWith('.hidden')`.\n         - Se for um arquivo, imprima o nome do arquivo.\n\n3. **Chamada à Função:** Chama a função `listardocumentos()` para listar todos os documentos no Vault.\n\nEste script lista todos os documentos no seu Vault, mostrando apenas os arquirivos válidos e não os arquivos ocultos."
+    }
+  ],
+  "user_profile": {
+    "name": "Desenvolvedor"
+  },
+  "facts": []
+}

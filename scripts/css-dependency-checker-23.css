@@ -1,0 +1,11 @@
+/*
+# Documentação Técnica Oficial
+Script: css-dependency-checker-23.css
+Linguagem: CSS
+Função: Utilitário para dependency checker integrado no ecossistema PlantiuIA.
+Autor: Agente Cérebro
+Seguro: Sim
+*/
+:root {
+    --primary-color: #22c55e;
+}

@@ -31,7 +31,15 @@ Inventário dos componentes do `SistemaLegado/` (Python/FastAPI + JS vanilla) re
 
 - Umidade ideal default: 35-65 %
 - Crítico seco: < ideal_min * 0.5 | Encharcado: > ideal_max * 1.2
-- Irrigação crítica: < ideal_min * 0.6 (25 min) | média: < ideal_min (15 min)
+- Irrigação por regra (`rule_based_decision`, fallback sem IA): < ideal_min*0.6 → crítico (25 min); < ideal_min → médio (15 min); > ideal_max → não irrigar (alerta drenagem); senão → ideal.
+
+## AI Gateway — modos e failover (`core/ai_gateway.py`)
+
+- 5 modos de operação: `local_only`, `api_only`, `hybrid_prefer_api`, `hybrid_prefer_local`, `smart_failover`.
+- Provedores: local GGUF (llama-cpp), Ollama, Claude, OpenAI, Gemini, BlackBox, MiniMax — cada um com Circuit Breaker próprio.
+- Failover: tenta provedores na ordem do modo, pulando os com CB em OPEN; se todos OPEN, força tentar todos (último recurso). Métricas: total/sucesso/failover + histórico das últimas 100 req.
+- `chat()` (texto, JSON ou freeform) e `analyze_image()` (visão) com o mesmo failover.
+- **Reuso na plataforma web:** portar o padrão gateway+circuit-breaker para uma rota serverless (ex.: análise de planta por foto / decisão de irrigação) usando os modelos Claude mais recentes como provedor primário.
 
 ## Não Reaproveitar
 
