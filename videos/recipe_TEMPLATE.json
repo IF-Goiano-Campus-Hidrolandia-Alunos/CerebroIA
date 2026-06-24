@@ -1,0 +1,33 @@
+{
+  "input": "videos para editar/SEU_VIDEO.mp4",
+  "fps": 24,
+  "watermark": {
+    "type": "star4",
+    "method": "unblend",
+    "center": [1162, 605],
+    "outer": 44,
+    "inner": 15,
+    "dilate": 6,
+    "radius": 5,
+    "dark_t": 8.0,
+    "amax": 0.85,
+    "strength": 1.2,
+    "clean_residual": true,
+    "lo": 22,
+    "hi": 55
+  },
+  "watermark_tmp": "_work/_clean.mp4",
+  "logo": {
+    "file": "assets/logo_badge_circular.png",
+    "center": [1162, 600],
+    "diam": 108,
+    "opacity": 0.92,
+    "start": 0.5,
+    "end": 7.2,
+    "fade": 0.4
+  },
+  "outputs": [
+    { "file": "videos editados/SEU_VIDEO_youtube.mp4", "audio": true, "logo": true, "crf": 18, "preset": "slow", "abr": "192k" },
+    { "file": "videos editados/SEU_VIDEO_site_mudo.mp4", "audio": false, "logo": false, "crf": 20, "preset": "slow" }
+  ]
+}
