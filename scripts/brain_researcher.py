@@ -74,7 +74,7 @@ try:
             if text.startswith("/"):
                 if " " in text:
                     return
-                cmds = ["/help", "/model", "/clear", "/status", "/vault", "/read", "/search", "/write", "/run", "/sair", "/exit"]
+                cmds = ["/help", "/model", "/clear", "/status", "/vault", "/read", "/search", "/write", "/run", "/video", "/sair", "/exit"]
                 for cmd in cmds:
                     if cmd.startswith(text):
                         yield Completion(cmd, start_position=-len(text))
@@ -86,7 +86,7 @@ try:
         def get_suggestion(self, buffer, document):
             text = document.text
             if text.startswith("/"):
-                cmds = ["/help", "/model", "/clear", "/status", "/vault", "/read", "/search", "/write", "/run", "/sair", "/exit"]
+                cmds = ["/help", "/model", "/clear", "/status", "/vault", "/read", "/search", "/write", "/run", "/video", "/sair", "/exit"]
                 for cmd in cmds:
                     if cmd.startswith(text) and cmd != text:
                         return Suggestion(cmd[len(text):])
@@ -703,6 +703,7 @@ def run_chat_loop():
                 print("\033[95m│\033[0m  \033[1m/search [termo]\033[0m   - Dispara imediatamente o fluxo de pesquisa e documentação web.")
                 print("\033[95m│\033[0m  \033[1m/write [arq]\033[0m     - Cria/grava um arquivo de script diretamente no terminal.")
                 print("\033[95m│\033[0m  \033[1m/run [cmd]\033[0m       - Executa um comando do sistema operacional (testes/compilação).")
+                print("\033[95m│\033[0m  \033[1m/video [arg]\033[0m     - Automatiza corte de silêncio e insere legendas via FFmpeg.")
                 print("\033[95m│\033[0m  \033[1m/sair\033[0m ou \033[1m/exit\033[0m   - Salva a memória e encerra o assistente.")
                 print("\033[95m╰──────────────────────────────────────────────────────────\033[0m\n", flush=True)
                 continue
@@ -871,6 +872,80 @@ def run_chat_loop():
                         print("\033[92m╰──────────────────────────────────────────────────────────\033[0m\n", flush=True)
                     except Exception as e:
                         print(f"\033[91m✖ Falha ao executar comando: {e}\033[0m\n", flush=True)
+                continue
+
+            elif cmd == "/video":
+                if not arg:
+                    print("\033[91m✖ Uso correto: /video [silences|subtitle] [args...]\033[0m")
+                    print("\033[90m  - Exemplo 1: /video silences video_bruto.mp4\033[0m")
+                    print("\033[90m  - Exemplo 2: /video subtitle video.mp4 'Texto da Legenda' 1.5 3.0\033[0m\n")
+                else:
+                    parts = arg.split(" ", 1)
+                    subcmd = parts[0].lower()
+                    subarg = parts[1].strip() if len(parts) > 1 else ""
+                    
+                    para_editar_dir = os.path.join(VAULT_DIR, "videos", "videos para editar")
+                    editados_dir = os.path.join(VAULT_DIR, "videos", "videos editados")
+                    os.makedirs(para_editar_dir, exist_ok=True)
+                    os.makedirs(editados_dir, exist_ok=True)
+                    
+                    try:
+                        from scripts.video_editor import cut_silences, add_subtitle
+                    except ImportError:
+                        import sys
+                        sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+                        from video_editor import cut_silences, add_subtitle
+
+                    if subcmd == "silences":
+                        if not subarg:
+                            print("\033[91m✖ Especifique o nome do arquivo bruto em videos/videos para editar/. Ex: /video silences input.mp4\033[0m\n", flush=True)
+                        else:
+                            in_file = os.path.join(para_editar_dir, subarg)
+                            out_name = os.path.splitext(subarg)[0] + "_cut" + os.path.splitext(subarg)[1]
+                            out_file = os.path.join(editados_dir, out_name)
+                            
+                            if not os.path.exists(in_file):
+                                print(f"\033[91m✖ Arquivo '{subarg}' não encontrado em '{para_editar_dir}'.\033[0m\n", flush=True)
+                            else:
+                                print(f"\033[95m[Video] Processando corte de silêncio de '{subarg}'...\033[0m", flush=True)
+                                success = cut_silences(in_file, out_file)
+                                if success:
+                                    print(f"\033[92m✔ Sucesso! Vídeo editado gravado em 'videos/videos editados/{out_name}'.\033[0m\n", flush=True)
+                                else:
+                                    print("\033[91m✖ Falha ao cortar silêncios do vídeo.\033[0m\n", flush=True)
+                                    
+                    elif subcmd == "subtitle":
+                        subparts = re.findall(r'(?:[^\s\"\']|\"(?:\\\\.|[^\"])*\"|\'(?:\\\\.|[^\'])*\')+', subarg)
+                        if len(subparts) < 4:
+                            print("\033[91m✖ Parâmetros insuficientes. Uso: /video subtitle [video.mp4] '[texto]' [inicio_seg] [duracao_seg]\033[0m\n", flush=True)
+                        else:
+                            video_name = subparts[0]
+                            text_val = subparts[1].strip("'\"")
+                            try:
+                                start_val = float(subparts[2])
+                                dur_val = float(subparts[3])
+                            except ValueError:
+                                print("\033[91m✖ Tempos de início e duração devem ser números decimais.\033[0m\n", flush=True)
+                                continue
+                                
+                            in_file = os.path.join(para_editar_dir, video_name)
+                            if not os.path.exists(in_file):
+                                in_file = os.path.join(editados_dir, video_name)
+                                
+                            if not os.path.exists(in_file):
+                                print(f"\033[91m✖ Vídeo '{video_name}' não encontrado nas pastas do vault.\033[0m\n", flush=True)
+                            else:
+                                out_name = os.path.splitext(video_name)[0] + "_subed" + os.path.splitext(video_name)[1]
+                                out_file = os.path.join(editados_dir, out_name)
+                                
+                                print(f"\033[95m[Video] Adicionando legenda a '{video_name}'...\033[0m", flush=True)
+                                success = add_subtitle(in_file, out_file, text_val, start_val, dur_val)
+                                if success:
+                                    print(f"\033[92m✔ Sucesso! Vídeo legendado gravado em 'videos/videos editados/{out_name}'.\033[0m\n", flush=True)
+                                else:
+                                    print("\033[91m✖ Falha ao legendar vídeo.\033[0m\n", flush=True)
+                    else:
+                        print(f"\033[91m✖ Subcomando '/video {subcmd}' não reconhecido. Use '/video' sem argumentos para ajuda.\033[0m\n", flush=True)
                 continue
 
             else:

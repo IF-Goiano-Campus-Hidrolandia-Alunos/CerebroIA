@@ -1,0 +1,22 @@
+{
+  "input": "videos para editar/Strawberry_plant_smart_irrigatio…_202606230054.mp4",
+  "fps": 24,
+  "workdir": "_work",
+  "captions": "captions_morango.json",
+  "intro": "intro_morango.json",
+  "patch": { "src": [1030, 565], "dst": [1120, 565], "size": 80, "core": 25, "fade": 40 },
+  "logo": { "file": "assets/logo_badge_circular.png", "center": [1162, 600], "diam": 108, "opacity": 0.92, "start": 0.4, "end": 6.7, "fade": 0.4 },
+  "captions_window": [3.5, 6.62],
+  "in_dur": 0.30,
+  "out_start": 6.45,
+  "out_dur": 0.18,
+  "slide": 46,
+  "grade": { "contrast": 1.06, "saturation": 1.12, "brightness": 0.01, "gamma": 1.0 },
+  "sharpen": 0.5,
+  "audio_filter": "loudnorm=I=-14:TP=-1.5:LRA=11",
+  "intro_window": [0.4, 3.3],
+  "outputs": [
+    { "file": "videos editados/morango_irrigacao_v3_youtube.mp4", "audio": true, "crf": 18, "preset": "medium", "abr": "192k" },
+    { "file": "videos editados/morango_irrigacao_v3_web_mudo.mp4", "audio": false, "crf": 20, "preset": "medium" }
+  ]
+}

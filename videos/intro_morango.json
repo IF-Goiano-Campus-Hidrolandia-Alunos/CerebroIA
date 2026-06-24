@@ -1,0 +1,17 @@
+{
+  "width": 1280,
+  "height": 720,
+  "radius": 14,
+  "card_fill": [16, 20, 27, 255],
+  "cards": [
+    {
+      "box": [40, 588, 540, 108],
+      "accent": [30, 210, 170],
+      "tag": "PlantiumAI",
+      "title": "Irrigação Inteligente para Morangos",
+      "title_size": 22,
+      "desc_size": 15,
+      "desc": "Estufa monitorada por sensores e controle IoT • PlantiumAI"
+    }
+  ]
+}

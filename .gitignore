@@ -2,3 +2,18 @@
 # NAO versionado: ao clonar/baixar, o vault vem SEM perfil definido, para
 # cada PC decidir qual e o seu (ThyagoToledo ou FeronZerbana).
 IDENTIDADE-LOCAL.md
+
+# === Videos: conteudo NAO versionado, mas as pastas sao mantidas ===
+# Os arquivos de midia (brutos e exportados) ficam so no PC, nao no git.
+# As skills de edicao em "videos/edicao de video/" CONTINUAM versionadas.
+videos/videos para editar/*
+videos/videos editados/*
+!videos/videos para editar/.gitkeep
+!videos/videos editados/.gitkeep
+
+# Pasta temporaria de trabalho (frames, overlays, caches de render)
+videos/_work/
+
+# Caches Python
+__pycache__/
+*.pyc

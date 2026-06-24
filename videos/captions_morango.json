@@ -1,0 +1,50 @@
+{
+  "width": 1280,
+  "height": 720,
+  "radius": 14,
+  "card_fill": [16, 20, 27, 255],
+  "cards": [
+    {
+      "box": [48, 6, 396, 118],
+      "tag": "Sensor",
+      "accent": [80, 210, 140],
+      "title": "Sensor de Luz — BH1750",
+      "desc": "Mede a luminosidade (lux) e ajusta a irrigação ao ciclo solar."
+    },
+    {
+      "box": [48, 144, 452, 152],
+      "tag": "Sensor",
+      "accent": [80, 210, 140],
+      "title": "Temp. & Umidade do Ar — DHT22",
+      "desc": "Monitora o microclima da estufa: temperatura e umidade relativa."
+    },
+    {
+      "box": [46, 308, 436, 198],
+      "tag": "Sensor",
+      "accent": [80, 210, 140],
+      "title": "Temp. do Solo — DS18B20",
+      "desc": "Sonda à prova d'água na zona radicular do morangueiro."
+    },
+    {
+      "box": [808, 6, 400, 118],
+      "tag": "Sensor",
+      "accent": [80, 210, 140],
+      "title": "Umidade do Solo — Capacitivo",
+      "desc": "Dispara a rega quando o solo seca. Resistente à corrosão."
+    },
+    {
+      "box": [806, 164, 402, 148],
+      "tag": "Controle",
+      "accent": [80, 190, 245],
+      "title": "Controlador — Raspberry Pi + ESP32",
+      "desc": "Lê os sensores e decide quando irrigar (nó IoT)."
+    },
+    {
+      "box": [808, 312, 400, 132],
+      "tag": "Atuador",
+      "accent": [245, 180, 80],
+      "title": "Relé 4 Canais + Válvula Solenoide",
+      "desc": "Aciona a válvula/bomba e libera a água na medida certa."
+    }
+  ]
+}

@@ -27,6 +27,7 @@ Utilizados diretamente na interface de terminal do assistente (`agent.bat`). Os 
 | **`/search [termo]`** | Dispara o fluxo de busca na web e compilação de notas no vault imediatamente. | `/search React Hooks` |
 | **`/write [arq]`** | Cria ou edita um arquivo de script diretamente a partir da entrada do terminal. | `/write script.py` |
 | **`/run [cmd]`** | Executa um comando do sistema operacional (útil para compilar/testar scripts). | `/run python script.py` |
+| **`/video`** | Automatiza a edição de vídeo: corte de silêncio e inserção de legendas via FFmpeg. | `/video silences bruto.mp4` |
 | **`/sair`** ou **`/exit`** | Salva a memória de diálogo e encerra o terminal de forma limpa. | `/sair` |
 
 ---

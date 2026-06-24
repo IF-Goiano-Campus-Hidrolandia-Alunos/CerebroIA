@@ -759,6 +759,7 @@ Resumos de pesquisas, APIs, documentação oficial.
 - [[concepts/gsap-matchmedia-responsive-animations]] — *Gsap Matchmedia Responsive Animations*
 - [[concepts/gsap-scrolltrigger-animacoes-scroll]] — *Gsap Scrolltrigger Animacoes Scroll*
 - [[concepts/gsap-scroll-video-scrub-keyframes]] — *Scroll-video scrub precisa de keyframes densos (ffmpeg -g 1)*
+- [[concepts/gsap-scrolltrigger-pin-sticky-overflow]] — *Usar pin do ScrollTrigger, não CSS sticky (overflow ancestral quebra sticky) + refresh*
 - [[concepts/gsap-svg-morphing-morphsvg]] — *Gsap Svg Morphing Morphsvg*
 - [[concepts/gsap-text-animations-splittext]] — *Gsap Text Animations Splittext*
 - [[concepts/spline-3d-camera-tracking-mouse]] — *Spline 3D Camera Tracking Mouse*

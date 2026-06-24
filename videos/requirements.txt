@@ -1,0 +1,5 @@
+# Dependências Python do estúdio de vídeo (scripts/video_studio.py)
+# FFmpeg/FFprobe 7.x precisam estar no PATH (instalados à parte).
+Pillow>=10
+numpy>=1.24
+opencv-python-headless>=4.8
