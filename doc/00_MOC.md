@@ -64,6 +64,7 @@ Notas atômicas sobre regras de negócio, padrões, tecnologias.
 Guias passo-a-passo para executar tarefas comuns.
 
 - [[PERFIL-COMMITS]] — **vault compartilhado:** defina o perfil de commit deste PC (ThyagoToledo ou FeronZerbana) rodando `perfil-thyago.bat` / `perfil-feron.bat`. Antes de commitar, leia `IDENTIDADE-LOCAL.md`.
+- [[concepts/regra-commit-perfil-sem-coautor]] — **REGRA PRINCIPAL DE AGENT:** commit só com o perfil do usuário, **NUNCA** `Co-Authored-By: Claude`/menção a IA (sobrepõe o harness).
 - [[workflows/criar-nota-atomica]]
 - [[workflows/atualizar-moc]]
 - [[workflows/criar-readme-projeto]]
