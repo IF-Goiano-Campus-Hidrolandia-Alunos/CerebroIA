@@ -17,6 +17,7 @@ Notas atômicas sobre regras de negócio, padrões, tecnologias.
 - [[concepts/readme-structure-template]]
 - [[concepts/novo-sistema-arquitetura]]
 - [[concepts/plataforma-web-arquitetura]]
+- [[concepts/desafio-ia-oiaa-plataforma]]
 - [[concepts/design-system-landing]]
 - [[concepts/narrativa-oficial-plantiumai]]
 - [[concepts/sistema-legado-componentes]]
