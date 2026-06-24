@@ -4,19 +4,55 @@
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
-  "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
+  "showOrphans": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:\"doc/00_rules\"",
+      "color": {
+        "a": 1,
+        "rgb": 14711941
+      }
+    },
+    {
+      "query": "path:\"doc/10_projects\"",
+      "color": {
+        "a": 1,
+        "rgb": 5682882
+      }
+    },
+    {
+      "query": "path:\"doc/20_workflows\"",
+      "color": {
+        "a": 1,
+        "rgb": 15516027
+      }
+    },
+    {
+      "query": "path:\"doc/30_libraries\"",
+      "color": {
+        "a": 1,
+        "rgb": 10011513
+      }
+    },
+    {
+      "query": "path:\"doc/40_external_cache\"",
+      "color": {
+        "a": 1,
+        "rgb": 13007069
+      }
+    }
+  ],
   "collapse-display": true,
-  "showArrow": false,
+  "showArrow": true,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
+  "nodeSizeMultiplier": 1.2,
   "lineSizeMultiplier": 1,
   "collapse-forces": true,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
-  "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.02152871844243019,
+  "centerStrength": 0.45,
+  "repelStrength": 20,
+  "linkStrength": 0.8,
+  "linkDistance": 220,
+  "scale": 0.021528718442430272,
   "close": true
 }

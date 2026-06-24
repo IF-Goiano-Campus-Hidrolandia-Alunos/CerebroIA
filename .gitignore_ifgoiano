@@ -1,0 +1,23 @@
+# Identidade local do PC (cada usuario define o seu rodando perfil-*.bat).
+IDENTIDADE-LOCAL.md
+
+# === Videos: conteudo NAO versionado, mas as pastas sao mantidas ===
+videos/videos para editar/*
+videos/videos editados/*
+!videos/videos para editar/.gitkeep
+!videos/videos editados/.gitkeep
+
+# Pasta temporaria de trabalho (frames, overlays, caches de render)
+videos/_work/
+
+# Caches Python
+__pycache__/
+*.pyc
+
+# === IF Goiano: Omitir arquivos de perfil pessoal e configuracoes locais ===
+perfil-thyago.bat
+perfil-feron.bat
+PERFIL-COMMITS.md
+scripts/sanitize_vault.py
+scripts/reorganize_vault.py
+.gitignore_ifgoiano

@@ -1,134 +1,92 @@
 ---
 tags: [readme, system]
-updated: 2026-06-10
+updated: 2026-06-24
+author: Colaborador1
 ---
 
-# Vault – Sistema de Documentação Otimizado para IA
+# Vault – Sistema de Documentacao Otimizado para IA e Spec-Driven Development
 
-Base de conhecimento local com estrutura minimalista focada em economia de tokens.
+Base de conhecimento local estruturada para economia de tokens e execucao de desenvolvimento orientada a especificacoes.
 
-## Estrutura
+## Nova Estrutura Organizacional (doc/)
 
 ```
-vault/doc/
-├── 00_MOC.md              ← COMECE AQUI
-├── concepts/              ← Notas atômicas (1 assunto/arquivo)
-├── workflows/             ← Guias passo-a-passo
-├── external_cache/        ← Resumos de pesquisas & APIs
-└── archive/               ← Conteúdo obsoleto
+doc/
+├── 00_rules/                ← Regras do sistema, diretrizes de IA e padroes
+│   └── templates/           ← Modelos de notas (.md) para manter a padronizacao
+├── 10_projects/             ← Projetos ativos e legados (divididos por autor)
+│   ├── Colaborador1/        ← Projetos de Colaborador1 (ignisengine, plantiumai, etc.)
+│   ├── Colaborador2/        ← Projetos de Colaborador2
+│   └── shared/              ← Projetos colaborativos com atuacao conjunta
+├── 20_workflows/            ← Guias passo-a-passo e processos (SOPs)
+├── 30_libraries/            ← Conceitos e referencias tecnicas por dominio
+│   ├── agronomy/            ← Referencia em agronomia e solos
+│   ├── ai_agents/           ← Referencia em IA, LLMs e arquiteturas agenticas
+│   ├── dotnet_arch/         ← Referencia em .NET, C# e arquitetura de software
+│   └── general/             ← Conceitos gerais de desenvolvimento
+└── 40_external_cache/       ← Cache de pesquisas externas e documentacoes de APIs
 ```
 
-## Fluxo Obrigatório
+O arquivo `doc/00_MOC.md` na raiz de `doc/` e o indice centralizador de todo o Vault.
 
-**Sempre que eu (Claude) receber uma tarefa:**
-
-1. **Check Local First**
-   - Leia `00_MOC.md`
-   - Se a informação existe, consuma apenas o arquivo específico
-
-2. **Evite Redundância**
-   - Não releia o vault inteiro
-   - Busque apenas o arquivo necessário
-
-3. **Busca Externa + Cache**
-   - Se não existir, pesquise na internet
-   - Resuma e salve em `concepts/` ou `external_cache/`
-   - Atualize o `00_MOC.md`
-
-4. **Escrita Econômica**
-   - Bullets, sem prosa
-   - Direto ao ponto
-   - Código limpo e focado
-
-## Padrões de Nota
-
-### Concept (Atômico)
-
-```yaml
----
-tags: [tag1, tag2]
-updated: 2026-06-10
 ---
 
-## Definição
-Uma frase clara.
+## Fluxo de Trabalho: Spec-Driven Development (SDD)
 
-## Contexto
-Quando aplicável.
+Todas as novas funcionalidades ou alteracoes arquiteturais de projetos devem seguir a metodologia SDD. A pasta de cada projeto ativo e divida em quatro subpastas obrigatorias:
 
-## Detalhes
-- Ponto 1
-- Ponto 2
+1. **00_spec/:** Contem as especificacoes (`.spec.md`). Define o escopo (in-scope), o que esta fora de escopo (out-of-scope), analisa ambiguidades do projeto e define a arquitetura geral antes de qualquer escrita de codigo.
+2. **01_plan/:** Contem os planos de implementacao (`.plan.md`). Mapeia os arquivos especificos a serem alterados, novos arquivos a serem criados, decisões tecnicas e o plano de testes/validacao.
+3. **02_tasks/:** Contem checklists de tarefas (`.task.md`) de progresso ativo, quebrando o plano em partes atomicas e independentes.
+4. **03_context/:** Armazena esquemas de banco de dados, mapeamento de rotas de API, glossarios e dicionarios de dados locais para preservar o contexto e evitar decaimento de memoria do agente de IA.
 
-## Links
-- [[outro-conceito]]
-```
+**Fluxo de Vida Obrigadorio de Feature:**
+Especificar (Spec) → Planejar (Plan) → Obter Aprovacao Humana → Executar e Validar (Execute & Verify).
 
-### Workflow
-
-```yaml
----
-tags: [workflow]
-updated: 2026-06-10
 ---
 
-## Objetivo
-O que faz.
+## Fluxo Obrigatorio do Agente de IA
 
-## Passos
-1. Fazer X
-2. Fazer Y
+Sempre que um agente de IA iniciar uma tarefa:
 
-## Validação
-Como verificar.
-```
+1. **Consultar Local Primeiro:**
+   - Leia `doc/00_MOC.md` e a pasta correspondente.
+   - Consuma apenas as notas especificas necessarias para a tarefa. Evite ler pastas completas sem necessidade para economizar tokens.
 
-### External Cache
+2. **Evitar Redundancia:**
+   - Nao leia o Vault inteiro em loops.
+   - Guarde em memoria apenas o que for relevante.
 
-```yaml
+3. **Busca Externa + Registro:**
+   - Caso falte informacao local, faca busca na internet.
+   - Resuma e salve como conceito em `30_libraries/<dominio>/` ou em `40_external_cache/`.
+   - Atualize os links correspondentes no `00_MOC.md`.
+
+4. **Escrita Economica:**
+   - Bullets, sem introducao ou prosa desnecessaria.
+   - Codigo direto ao ponto.
+
 ---
-tags: [external]
-updated: 2026-06-10
-source: https://url
+
+## Regras de Ouro de Redacao
+
+✓ Uma ideia = um arquivo.
+✓ Definicao curta + bullets.
+✓ Sem prosa introdutoria ou conclusiva.
+✓ Datas corretas no cabecalho `updated:` de frontmatter YAML.
+✓ Links atualizados no formato `[[pasta/nome-nota]]`.
+
+✗ Markdown decorativo exagerado (negritos em excesso, cores).
+✗ Listas aninhadas profundas.
+✗ Uso de emojis (proibido em commits, documentacao e codigo).
+✗ Textos longos e prolixos.
+
 ---
-
-## Resumo
-O que é, 1-2 linhas.
-
-## Pontos-Chave
-- Ponto 1
-```
-
-## Regras de Ouro
-
-✓ Uma ideia = um arquivo
-✓ Definição + bullets
-✓ Sem prosa introdutória/conclusiva
-✓ Links sempre atualizados
-✓ Datas em `updated:`
-✓ Tags relevantes
-
-✗ Markdown decorativo (bold, cores)
-✗ Listas aninhadas
-✗ Emoji
-✗ Textos longos
-
-## Manutenção
-
-- **Semanal:** Review fleeting notes (em _fleeting/ se existir)
-- **Mensal:** Atualizar datas, verificar links quebrados
-- **Trimestral:** Archive obsoleto, merge duplicatas
 
 ## Economia de Tokens
 
-Exemplo:
-- Pergunta 1: "O que é X?" → Pesquisa + síntese = 5k tokens
-- Salva: `concepts/x.md`
-- Pergunta 2: "Me explique X de novo" → Lê vault = 200 tokens
-- **Economia:** 96%
-
-Com 100 topics e 3-5 perguntas cada, redução de milhões de tokens.
-
----
-
-Leia `00_MOC.md` para começar.
+Exemplo pratico:
+- Pergunta 1: "O que e X?" → Pesquisa + sintese = 5k tokens.
+- Salva-se em: `30_libraries/general/x.md`.
+- Pergunta 2: "Explique X novamente" → IA le o arquivo local = 200 tokens.
+- **Economia:** 96% em sessoes futuras.

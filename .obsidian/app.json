@@ -1,1 +1,7 @@
-{}
+{
+  "userIgnoreFilters": [
+    "skills/",
+    "scripts/",
+    "videos/"
+  ]
+}
