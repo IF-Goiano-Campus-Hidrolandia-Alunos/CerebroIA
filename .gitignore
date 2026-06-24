@@ -1,11 +1,7 @@
 # Identidade local do PC (cada usuario define o seu rodando perfil-*.bat).
-# NAO versionado: ao clonar/baixar, o vault vem SEM perfil definido, para
-# cada PC decidir qual e o seu (ThyagoToledo ou FeronZerbana).
 IDENTIDADE-LOCAL.md
 
 # === Videos: conteudo NAO versionado, mas as pastas sao mantidas ===
-# Os arquivos de midia (brutos e exportados) ficam so no PC, nao no git.
-# As skills de edicao em "videos/edicao de video/" CONTINUAM versionadas.
 videos/videos para editar/*
 videos/videos editados/*
 !videos/videos para editar/.gitkeep
@@ -17,3 +13,11 @@ videos/_work/
 # Caches Python
 __pycache__/
 *.pyc
+
+# === IF Goiano: Omitir arquivos de perfil pessoal e configuracoes locais ===
+perfil-thyago.bat
+perfil-feron.bat
+PERFIL-COMMITS.md
+scripts/sanitize_vault.py
+scripts/reorganize_vault.py
+.gitignore_ifgoiano
