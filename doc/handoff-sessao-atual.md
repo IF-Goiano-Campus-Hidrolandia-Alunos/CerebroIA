@@ -1,18 +1,22 @@
-# Handoff de Sessão - 2026-06-24
+# Handoff de Sessao - 2026-06-24
 
-## 1. Estado Atual (web/ — branch main, tudo commitado/pushado)
-- **Landing**: ícone oficial no favicon + título da aba só "PlantiumAI"; botão **YouTube** (navbar pílula vermelha + CTA "Inscreva-se no canal" no padrão dos botões da seção final) → `youtube.com/@PlantiumAI`.
-- **Seção de vídeo com scroll** (`#demo-video` em `landing.tsx` + GSAP ScrollTrigger): item de navbar "PlantiumAI" + vídeo `object-fit:cover` com scrub do `currentTime` pela rolagem.
-  - **Bug corrigido**: `position:sticky` quebrava por causa do `overflow-x:hidden` no root → trocado por **pin do ScrollTrigger** + `refresh()` + fallback mobile (autoplay/loop). Ver [[30_libraries/general/gsap-scrolltrigger-pin-sticky-overflow]].
-  - Keyframes/scrub fluido (ffmpeg all-intra): ver [[30_libraries/general/gsap-scroll-video-scrub-keyframes]].
-- **Pós-login** (rodadas anteriores): dashboard ECharts (dados simulados), perfil real da sessão, reset de senha seguro, login Google (provider condicional; botão visual), clima INMET A002 + Open-Meteo, PDF Python/ReportLab (2 modelos: resumido/técnico). Ver [[10_projects/Colaborador1/plantiumai/03_context/plantiumai-features-pos-login]].
+## 1. Estado Atual (TreinamentoOIAA — branch main, tudo commitado/build ok)
+- **Identidade do Aluno**: Login por codigo de acesso de 6 caracteres. Integração na NavBar, tela de login em `/entrar` e contexto persistente em `localStorage`.
+- **Auto-grading de Quizzes e Metricas**:
+  - Quizzes integrados na trilha (Teoria, Treino Guiado e Treino sem Auxilio) corrigidos no BackEnd.
+  - Formulario de metricas com estimativa de pontos em tempo real na trilha (Preencher Lacunas e IA do Zero).
+  - Lógica de auto-grading local no FrontEnd como fallback para execucao 100% offline.
+  - Gravacao de tentativas em tabela `submissions` no Neon DB e atualizacao por "best score".
+- **Painel do Tutor**:
+  - Separado por abas funcionais (Visao Geral, Times e Codigos, Logs de Envios, Lançamento de Notas).
+  - Integrado graficos **Recharts** para monitoramento de medias e conclusoes.
+  - Geracao em lote de codigos de acesso (backfill) e exportacao consolidada em **CSV**.
+- **Regras de Agente**: Regras de banimento de emojis e autoria unica no Git aplicadas rigorosamente.
 
-## 2. Pendências
-1. **Secrets na Vercel** (algumas já adicionadas por você): `RESEND_API_KEY`, `EMAIL_FROM`, `INMET_STATION=A002` + rotacionar Resend/Neon (passaram pelo chat).
-2. **Dados reais**: ligar dashboard e PDF à tabela `readings` (escopo `company_id`) — hoje simulado.
-3. **Vídeo**: se o scrub engasgar no desktop, reencodar all-intra (`-g 1`) — comando na nota de keyframes.
-4. Rate limiting distribuído (Upstash) no reset e na ingestão.
+## 2. Pendencias e Proximos Passos
+- **Deploy do BackEnd na Vercel**: Garantir que as Vercel Functions do BackEnd estao publicadas.
+- **Variavel de Ambiente**: Configurar `VITE_API_URL` no FrontEnd de producao apontando para o link do BackEnd da Vercel.
+- **Token do Tutor**: Manter `ADMIN_TOKEN` seguro nas variaveis do servidor.
 
-## 3. Observações
-- CSP restritiva (`connect-src 'self'`): integrações externas server-side (clima/PDF same-origin; Google é navegação top-level).
-- Brain é repo à parte (perfil Colaborador1). Esta sessão subiu doc + os utilitários de vídeo (`scripts/video_*.py`, `videos/`) sem sobrepor arquivos novos.
+## 3. Observacoes de Vault
+- Este vault (`Brain-main`) foi atualizado com a documentacao de contexto do projeto TreinamentoOIAA em `doc/10_projects/Colaborador1/treinamento-oiaa/03_context/implementacao-scores.md`.
