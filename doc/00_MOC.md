@@ -85,6 +85,14 @@ Resumos de pesquisas, APIs, documentação oficial.
 
 ## Estudos Importados (.NET & Arquitetura de Software)
 
+### Conceitos e Padroes Arquiteturais
+
+- [[30_libraries/dotnet_arch/dotnet-arquitetura-limpa]] — *Clean Architecture em .NET*
+- [[30_libraries/dotnet_arch/dotnet-domain-driven-design]] — *Domain-Driven Design (DDD) em C#*
+- [[30_libraries/dotnet_arch/dotnet-solid-principios]] — *Principios SOLID em C#*
+- [[30_libraries/dotnet_arch/dotnet-cqrs-mediatr]] — *CQRS e MediatR em APIs .NET*
+- [[30_libraries/dotnet_arch/dotnet-injecao-dependencia-lifecycle]] — *Ciclos de Vida de Injecao de Dependencia*
+
 - [[30_libraries/dotnet_arch/dotnet-asp-net-curso-udemy-1-asp-net-template]] — *1 - ASP.NET Template (DOTNET)*
 - [[30_libraries/dotnet_arch/dotnet-asp-net-curso-udemy-10-asp-net-ajustando-model]] — *10 - ASP.NET Ajustando Model (DOTNET)*
 - [[30_libraries/dotnet_arch/dotnet-asp-net-curso-udemy-11-asp-net-ajustando-implementations]] — *11 - ASP.NET Ajustando Implementations (DOTNET)*
