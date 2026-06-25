@@ -38,6 +38,16 @@ Plataforma web do Desafio Tecnico de IA (OIAA) do IF Goiano - Campus Hidrolandia
 - Cores: NLP roxo/violeta, VC ciano, AM verde/esmeralda. Prompts na raiz: PROMPT_FRONTEND.md, PROMPT_TRILHA_ETAPAS.md (locais, fora do git).
 - Commits: perfil do usuario, sem co-autoria de IA. Repo: github.com/IF-Goiano-Campus-Hidrolandia-Alunos/TreinamentoOIAA.
 
+## Auto-pontuacao (quiz + CSV), gabaritos e rate-limit
+
+- Identidade do aluno: `members.access_code` (6 chars, indice unico, gerado no createTeam); `POST /api/identify` valida e o front guarda sessao (`ifg-member-session`). Submissoes assinam header `x-member-code`. CORS de `_db.ts` libera `Content-Type, x-admin-token, x-member-code, x-access-code` (faltar isso = "Failed to fetch" no quiz).
+- Auto-grader (`POST /api/submit`, header x-member-code): `kind: quiz` (corrige por gabarito server-side, `QUIZZES` em BackEnd/lib; front NAO leva `correctIndex` no bundle), `kind: metric` (valor digitado -> `grading.ts`), `kind: csv` (estilo Kaggle). Grava em `submissions` (historico) e faz upsert do best-score em `member.scores`. Tabela: `submissions(id, member_id FK cascade, pillar, stage, points, detail jsonb, created_at)`.
+- CSV auto-scorer: tutor cadastra gabarito por pilar/etapa em `POST /api/admin/answer-key` (CSV id,valor; metrica derivada do pilar: vc/nlp=accuracy, am=rmse) -> tabela `answer_keys(pillar,stage,metric,keys jsonb,updated_at, PK(pillar,stage))`. Aluno faz upload do CSV de previsoes -> servidor calcula accuracy/RMSE (`grading.ts computeAccuracy/computeRmse`, parser em `lib/csv.ts`) -> `calculateMetricPoints`. GET lista gabaritos, DELETE `?pillar=&stage=` remove. UI: aba "Gabaritos" no painel do tutor + upload no MetricSubmissionComponent. A prova de fraude (servidor calcula a metrica das previsoes reais).
+- Rate-limit (`submit.ts`): cooldown global de 4s por integrante (429 "Aguarde Xs") + teto de 10 tentativas por etapa (429). Falha no controle nao bloqueia submissao legitima.
+- Painel do tutor (`AdminPage`): abas Visao Geral (KPIs + 2 graficos recharts), Times e Codigos (mostra/copia access_code), Historico de Submissoes (`GET /api/admin/submissions`, busca), Lancar Notas (override manual via `/api/scores`), Gabaritos. Export CSV de notas, backfill de codigos (`/api/admin/backfill-codes`).
+- Pegadinha corrigida: GETs de admin faziam SELECT sem `ensureSchema` -> 500 em DB/instancia nova ate outra rota criar a tabela; agora chamam `ensureSchema` (exportado). E o `vercel env add` ignora stdin como agente (usar `--value`); var `VITE_*` "sensitive" volta "" no `env pull` (usar `--no-sensitive`).
+- Tudo validado ao vivo: quiz 200 (7/10), CSV 18/25 (0.75 acc), rate-limit 429. ADMIN_TOKEN = capivara-2026 (= token demo do painel).
+
 ## Links
 
 - [[deploy-plataforma-web-vercel-neon]]
