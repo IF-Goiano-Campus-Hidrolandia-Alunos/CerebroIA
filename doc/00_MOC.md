@@ -824,6 +824,8 @@ Resumos de pesquisas, APIs, documentação oficial.
 
 ### 🖥️ Tauri v2 & Desenvolvimento Desktop (100 Conceitos)
 
+- [[concepts/tauri-filePath-export-csv]] — FilePath enum no dialog save — usar pattern matching, não to_path_buf()
+- [[concepts/tauri-icons-build]] — Ícones obrigatórios para generate_context!() no CI
 - [[30_libraries/general/tauri-v2-app-data-dir-local-path]] — *Tauri V2 App Data Dir Local Path*
 - [[30_libraries/general/tauri-v2-app-menu-custom-rust]] — *Tauri V2 App Menu Custom Rust*
 - [[30_libraries/general/tauri-v2-app-metadata-retrieval]] — *Tauri V2 App Metadata Retrieval*
