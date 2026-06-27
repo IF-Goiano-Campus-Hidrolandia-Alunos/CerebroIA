@@ -18,6 +18,7 @@
   - Removidos o botao flutuante anterior e o indicador textual "Role para explorar" da frente do video de rolagem.
   - Navbar Fixa e Unificada: A barra de navegacao principal acompanha permanentemente o scroll (position fixed) em ambas as paginas.
   - Responsividade Mobile: Abas da navbar em carrossel horizontal de rolagem suave e ocultacao do titulo textual "PlantiumAI" em telas menores que 768px.
+  - Aba Parceiros na Navbar: Integrada a aba "Parceiros" na barra de navegacao principal de ambas as paginas (apontando localmente para `#parceiros` e de forma absoluta para `/#parceiros` em planos).
   - Secao de Parceiros: Adicionada a secao "Parceiros e Apoiadores" abaixo da equipe na Home Page, apresentando Cirineu C. Fernandes, Juliana C. V. Fernandes e o Prof. Renato Ribeiro dos Santos com retratos profissionais e as logos das organizacoes SiriNEO Technologies, Faculdade de Principios Militares (FPM) e VarejoIN.
 
 ## 2. Documentacao do Vault

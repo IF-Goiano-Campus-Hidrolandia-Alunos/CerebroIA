@@ -44,4 +44,7 @@ Os parceiros e suas respectivas logos reais fornecidas foram organizados em uma 
 - Retratos profissionais reais: `web/public/landing/cirineu.jpg` (origem: SiriNEO), `web/public/landing/juliana.jpg` (origem: SiriNEO) e `web/public/landing/renato.png` (origem: FPM).
 - Logotipos reais fornecidos: `web/public/landing/logo-sirineo.png`, `web/public/landing/logo-ita.png`, `web/public/landing/logo-fpm.png` e `web/public/landing/logo-varejoin.png`.
 - O layout utiliza grids CSS responsivos (`class="plf-team"` e `class="plf-pillars"`) com 3 colunas para integrantes e 4 colunas para logotipos das organizacoes parceiras.
+- **Aba de Navegacao (Navbar)**: Foi adicionada a aba "Parceiros" na barra de navegacao principal das duas paginas:
+  - Na Home Page (`web/src/components/landing.tsx`), aponta diretamente para a ancora local `#parceiros`.
+  - Na Pagina de Planos (`web/src/app/planos/page.tsx`), aponta de forma absoluta para a ancora `/#parceiros`, permitindo o retorno direto à secao a partir de outra pagina.
 
