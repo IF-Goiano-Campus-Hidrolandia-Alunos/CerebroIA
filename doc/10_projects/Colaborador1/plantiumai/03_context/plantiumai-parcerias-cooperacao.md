@@ -1,6 +1,7 @@
 ---
 tags: [plantiumai, parcerias, fpm, varejoin, sirineo, cooperacao-tecnica]
 updated: 2026-06-27
+<!-- ultima alteracao: Cirineu badge=Mestrando ITA, role=CEO; Juliana badge=Gestao de Recursos -->
 ---
 
 # Parcerias e Cooperacao Tecnica - PlantiumAI
@@ -10,7 +11,9 @@ Este documento registra as parcerias estrategicas e academicas estruturadas para
 ## 1. Integrantes Parceiros e Mentoria
 
 ### 1.1 Cirineu C. Fernandes & Juliana C. V. Fernandes
-- **Perfil**: Engenheiros egressos do Instituto Tecnologico de Aeronautica (ITA) e co-fundadores da SiriNEO Technologies.
+- **Cirineu**: CEO da SiriNEO Technologies · Mestrando ITA
+- **Juliana**: Co-fundadora SiriNEO Technologies · Gestao de Recursos
+- **Perfil**: Engenheiros com formacao no Instituto Tecnologico de Aeronautica (ITA).
 - **Papel no Projeto**: Apoio na cooperacao tecnologica de hardware e integracao de sistemas de telemetria complexos. Atuam como conselheiros tecnicos para o design robusto do firmware ESP32 e dos componentes de instrumentacao eletronica das micro estufas.
 
 ### 1.2 Prof. Renato Ribeiro dos Santos
