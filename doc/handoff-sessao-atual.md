@@ -21,6 +21,7 @@
   - Aba Parceiros na Navbar: Integrada a aba "Parceiros" na barra de navegacao principal de ambas as paginas (apontando localmente para `#parceiros` e de forma absoluta para `/#parceiros` em planos).
   - Secao de Parceiros: Adicionada a secao "Parceiros e Apoiadores" abaixo da equipe na Home Page, apresentando Cirineu C. Fernandes, Juliana C. V. Fernandes e o Prof. Renato Ribeiro dos Santos com retratos profissionais e as logos das organizacoes SiriNEO Technologies, Faculdade de Principios Militares (FPM) e VarejoIN.
   - Metragem Quadrada dos Planos: Atualizada a pagina `/planos` e a tabela `tabelaprecos.md` com a area de estufa coberta por cada plano (Semente: ate 5 m², Cultivo: ate 30 m², Estufa+: ate 150 m²) nas descricoes e tabelas.
+  - Evolucao do Trabalho Cientifico (DOCX): Adicionadas as secoes 6.7 (Planejamento Tributario - Simples Nacional) e 6.8 (Plano de Negocios e Estrategia Go-To-Market) no arquivo `PlantiumAI_TrabalhoCientifico.docx` em Downloads, e espelhadas nos arquivos de documentacao do repositorio.
 
 ## 2. Documentacao do Vault
 - Novo documento de especificacao e comportamento da pagina de planos: `doc/10_projects/Colaborador1/plantiumai/03_context/redesenho-pagina-planos.md`.

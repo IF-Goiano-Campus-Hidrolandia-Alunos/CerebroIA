@@ -21,6 +21,8 @@ do repo). Espelhado em `tabelaprecos.md` e `lucro_rentavel.md` na raiz do repo.
 - Mix 50/35/15 → ARPU R$ 159,50; margem média R$ 95,75; break-even ~4 assinantes.
 - Projeção (Tabela 8): 30 assinantes → R$ 30,3 mil/ano; 50 → R$ 53,2 mil; 100 → R$ 107,7 mil.
 - Payback do CapEx (R$ 43.048,74, Anexo C): ~17 meses (30) / ~10 meses (50), sem contar a receita única (equip.+instalação: R$ 1.880 a R$ 2.780/cliente), que antecipa o retorno.
+- **Seção 6.7 — Planejamento Tributário**: Projeção fiscal sob Simples Nacional. SaaS enquadrado no Anexo III (6,00% nominal inicial) e Hardware no Anexo I (4,00% nominal inicial). Alíquotas efetivas ponderadas simuladas de 5,18% (10 e 30 clientes), 5,85% (50 clientes, 2ª faixa) e 8,06% (100 clientes, 3ª faixa).
+- **Seção 6.8 — Plano de Negócios e Go-To-Market**: Meta de 50 clientes ativos nos primeiros 12 meses, com aquisição viabilizada por parcerias de fomento (SENAR Goiás, Sebrae Goiás), varejo técnico físico (VarejoIN), validação acadêmica e PoCs de campo (FATESG, FPM) e divulgação digital.
 
 ## Reflexo no site
 - `/planos` ganhou a secao **"Equipamento e instalacao"** (cards: kit basico R$ 1.290, kit completo R$ 2.190, instalacao R$ 590 com mao de obra 8h × R$ 55/h) + adendo de deslocamento (fórmula e exemplos). FAQ alinhado aos precos ao cliente.
