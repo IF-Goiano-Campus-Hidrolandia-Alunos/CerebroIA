@@ -18,7 +18,10 @@ O `next.config.mjs` tinha `script-src 'self' 'unsafe-inline'` **sem `'unsafe-eva
 - **Login**: NÃO era bug — renderiza normal a 390px (card visível, tema escuro ok). O screenshot do preview trava por causa do `backdrop-filter`, não por falha de layout.
 
 ## Soluções
-- **Menu hambúrguer com CSS puro (checkbox hack)**: `<input type=checkbox>` + `<label>` + seletor `.plf-nav-toggle:checked ~ .plf-mobile-menu`. Abre/fecha **sem JS** (robusto a falha de hidratação) — ver [[plantiumai-web-preview-hydration]]. Abaixo de 860px: esconde `.plf-tabs` e o Login inline (`.plf-login-btn`/`.plf-desktop-only`), mostra `.plf-hamburger`, marca (`.plf-nav-title`) volta a aparecer. Ícone alterna ☰/✕; backdrop (label do mesmo checkbox) fecha ao tocar fora. Aplicado nas DUAS navbars (landing inline-HTML e `/planos` JSX, que reusa as classes `.plf-root`).
+- **Menu de Abas em Carrossel Horizontal**: Em resolucoes menores de 960px, as abas centrais de navegacao (`.plf-tabs`) nao sao ocultadas ou colocadas sob um menu hamburguer. Em vez disso, elas se organizam em um carrossel horizontal suave (`overflow-x: auto; white-space: nowrap; scrollbar-width: none;`). Isso permite navegacao direta e imediata de qualquer ponto, eliminando a complexidade de menus abertos/fechados.
+- **Ocultacao Inteligente de Titulo**: Para economizar espaco horizontal em smartphones (abaixo de 768px), o titulo textual da marca (`.plf-nav-title` - "PlantiumAI") e ocultado, preservando apenas o icone circular e as abas de navegacao centrais.
+- **Navbar Unificada e Fixa**: Ambas as paginas (Home Page e `/planos`) compartilham o mesmo layout de Header fixo (`fixed top-[18px] z-40 max-w-[1180px] mx-auto px-6`) com efeito glassmorphism e links reativos apontando para as ancoras da homepage.
+
 - **Vídeo**: `poster="/landing/hero.jpg"` + `background` de fallback no `#plf-video-sticky` (nunca preto) + `height:62vh` em `max-width:760px`.
 - **Animações "premium" (scroll-reveal)**: fade-up dos blocos + cascata (`plf-stagger` nos grids `.plf-flow/.plf-pillars/.plf-team`) via `IntersectionObserver`, easing `cubic-bezier(.16,1,.3,1)`. Respeita `prefers-reduced-motion`.
 
@@ -31,8 +34,8 @@ O `public/videos/PlantiumAI_site_mudo.mp4` tinha **11MB @ 8.5 Mbps** (720p/10s) 
 
 ## Arquivos
 - `web/src/components/landing.tsx` (navbar, vídeo, JS do reveal)
-- `web/src/app/landing.css` (hambúrguer, reveal/stagger, vídeo mobile)
-- `web/src/app/planos/page.tsx` (mesma navbar hambúrguer)
+- `web/src/app/landing.css` (transições, reveal/stagger, vídeo mobile e carrossel de abas)
+- `web/src/app/planos/page.tsx` (mesma navbar fixa e unificada com abas e plf-root)
 - Docs de negócio na raiz do repo: `tabelaprecos.md`, `lucro_rentavel.md` (3 planos + rentabilidade, base no Trabalho Científico).
 
 ## Links
