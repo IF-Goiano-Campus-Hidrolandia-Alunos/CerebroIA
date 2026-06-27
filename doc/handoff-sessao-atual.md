@@ -16,16 +16,16 @@
 
 - **Landing Page / Home Page (`/`) e Pagina de Planos (`/planos`)**:
   - Removidos o botao flutuante anterior e o indicador textual "Role para explorar" da frente do video de rolagem.
-  - Navbar Fixa e Unificada: A barra de navegacao principal foi configurada para acompanhar permanentemente o scroll do usuario (position fixed) tanto na Home Page quanto na Pagina de Planos.
-  - Responsividade Mobile Inteligente: Em telas menores que 960px, as abas da navbar nao sao mais ocultadas; elas passam a ser exibidas em formato de carrossel com scroll horizontal suave. Em telas menores que 768px, a marca textual "PlantiumAI" e ocultada para preservar o espaco horizontal, mantendo apenas o icone circular e o botao de Login.
-  - Abas da Navbar em Planos: A navbar em `/planos` agora e identica em estilo à da Home Page, incluindo links ancorados (`/#solucao`, `/#tecnologia`, etc.) que redirecionam perfeitamente de volta para as secoes da Home Page a partir da pagina de planos.
-
-
+  - Navbar Fixa e Unificada: A barra de navegacao principal acompanha permanentemente o scroll (position fixed) em ambas as paginas.
+  - Responsividade Mobile: Abas da navbar em carrossel horizontal de rolagem suave e ocultacao do titulo textual "PlantiumAI" em telas menores que 768px.
+  - Secao de Parceiros: Adicionada a secao "Parceiros e Apoiadores" abaixo da equipe na Home Page, apresentando Cirineu C. Fernandes, Juliana C. V. Fernandes e o Prof. Renato Ribeiro dos Santos com retratos profissionais e as logos das organizacoes SiriNEO Technologies, Faculdade de Principios Militares (FPM) e VarejoIN.
 
 ## 2. Documentacao do Vault
-- Novo documento de especificação e comportamento interativo da pagina de planos: `doc/10_projects/Colaborador1/plantiumai/03_context/redesenho-pagina-planos.md`.
+- Novo documento de especificacao e comportamento da pagina de planos: `doc/10_projects/Colaborador1/plantiumai/03_context/redesenho-pagina-planos.md`.
+- Novo documento de cooperacao tecnica e parcerias: `doc/10_projects/Colaborador1/plantiumai/03_context/plantiumai-parcerias-cooperacao.md`.
+- Atualizacao da documentacao de responsividade mobile no vault: `doc/10_projects/Colaborador1/plantiumai/03_context/plantiumai-responsividade-mobile.md`.
 
 ## 3. Servidor Local e Build
-- Servidor de desenvolvimento (`npm run dev`) rodando estavel na porta 3000.
-- Resolvida a colisao de cache de build Next.js (apagando a pasta `.next/` antes de rodar o dev server apos um build de producao).
-- Build validado com sucesso (`npm run build`).
+- Servidor de desenvolvimento (`npm run dev`) rodando estavel.
+- Build de producao validado e compilado com sucesso (`npm run build`) com suporte reativo a novos componentes e assets.
+
