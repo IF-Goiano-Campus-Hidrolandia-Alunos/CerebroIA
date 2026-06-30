@@ -30,6 +30,8 @@ Notas atômicas sobre regras de negócio, padrões, tecnologias.
 - [[10_projects/Colaborador1/ignisengine/03_context/ignisengine-java-17]]
 - [[10_projects/Colaborador1/ignisengine/03_context/ignisengine-image-editor]]
 - [[10_projects/Colaborador1/ignisengine/03_context/ignisengine-ai-integration]]
+- [[30_libraries/ai_agents/mcp-protocol-specification]]
+- [[30_libraries/ai_agents/mcp-java-sdk-usage]]
 - [[10_projects/Colaborador1/ignisengine/03_context/ignisengine-animation]]
 - [[10_projects/Colaborador1/ignisengine/03_context/ignisengine-auditoria]]
 - [[10_projects/Colaborador1/ignisengine/03_context/ignisengine-serialization]]
@@ -40,8 +42,13 @@ Notas atômicas sobre regras de negócio, padrões, tecnologias.
 - [[10_projects/Colaborador1/ignisengine/03_context/ignisengine-auditoria-arquitetural]]
 - [[10_projects/Colaborador1/ignisengine/03_context/ignisengine-dividas-tecnicas]]
 - [[10_projects/Colaborador1/ignisengine/00_spec/ignisengine-decisoes-arquiteturais]]
+- [[10_projects/Colaborador1/ignisengine/00_spec/ignisengine-mcp-integration-spec]]
+- [[10_projects/Colaborador1/ignisengine/03_context/ignisengine-mcp-architecture]]
 - [[30_libraries/general/integracao-dashboard-pos-login]]
 - [[10_projects/Colaborador1/plantiumai/03_context/plantiumai-features-pos-login]]
+- [[10_projects/Colaborador1/plantiumai/03_context/plantiumai-responsividade-mobile]]
+- [[10_projects/Colaborador1/plantiumai/03_context/plantiumai-modelo-precos]]
+- [[10_projects/Colaborador1/plantiumai/03_context/plantiumai-limpeza-repo]]
 - [[10_projects/Colaborador1/plantiumai/03_context/seguranca-fluxo-reset-senha]]
 - [[30_libraries/general/llm-context-token-optimization]]
 - [[30_libraries/general/cheat-sheet-comandos-tecnologias]]
@@ -821,6 +828,8 @@ Resumos de pesquisas, APIs, documentação oficial.
 
 ### 🖥️ Tauri v2 & Desenvolvimento Desktop (100 Conceitos)
 
+- [[concepts/tauri-filePath-export-csv]] — FilePath enum no dialog save — usar pattern matching, não to_path_buf()
+- [[concepts/tauri-icons-build]] — Ícones obrigatórios para generate_context!() no CI
 - [[30_libraries/general/tauri-v2-app-data-dir-local-path]] — *Tauri V2 App Data Dir Local Path*
 - [[30_libraries/general/tauri-v2-app-menu-custom-rust]] — *Tauri V2 App Menu Custom Rust*
 - [[30_libraries/general/tauri-v2-app-metadata-retrieval]] — *Tauri V2 App Metadata Retrieval*

@@ -4,17 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "b7c30bf0a9425cfd",
+        "id": "aa01c6a153865643",
         "type": "tabs",
         "children": [
           {
-            "id": "8b45767499341518",
+            "id": "461ef3643881b3dd",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Visualização em gráfico"
+              "type": "canvas",
+              "state": {
+                "file": "Sem título.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 93,
+                  "zoom": 0
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Sem título"
             }
           }
         ]
@@ -176,44 +183,44 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "8b45767499341518",
+  "active": "461ef3643881b3dd",
   "lastOpenFiles": [
-    "doc/20_workflows/sincronizacao-duplo-repositorio.md",
-    "doc/10_projects/Colaborador2",
-    "doc/10_projects/Colaborador1/plantiumai/03_context/seguranca-fluxo-reset-senha.md",
-    "doc/10_projects/Colaborador1/plantiumai/03_context/plantiumai-features-pos-login.md",
-    "doc/10_projects/Colaborador1/plantiumai/03_context/narrativa-oficial-plantiumai.md",
-    "doc/10_projects/Colaborador1/penetrometro/03_context/penetrometro-mobile.md",
-    "doc/10_projects/Colaborador1/penetrometro/03_context/penetrometro-desktop-dominio.md",
-    "doc/10_projects/Colaborador1/penetrometro/03_context/agronomy-compactacao-solo-penetrometros-resistencia.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-serialization.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-marketplace.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-javafx-migracao.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-java-17.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-inventario.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-image-editor.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-gameobject.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-dividas-tecnicas.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-collision-system.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-builder.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-auditoria.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-auditoria-arquitetural.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-animation.md",
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-ai-integration.md",
-    "doc/10_projects/Colaborador1/ignisengine/00_spec/ignisengine-roadmap.md",
-    "doc/10_projects/Colaborador1/ignisengine/00_spec/ignisengine-roadmap-mestre.md",
-    "doc/10_projects/Colaborador1/ignisengine/00_spec/ignisengine-decisoes-arquiteturais.md",
-    "doc/10_projects/Colaborador1/blackhole/03_context/blackhole-agent-ui-premium.md",
-    "doc/10_projects/Colaborador1/blackhole/03_context/blackhole-agent-comandos.md",
-    "doc/10_projects/Colaborador1/plantiumai/03_context",
-    "doc/10_projects/Colaborador1/plantiumai/01_plan",
-    "doc/10_projects/Colaborador1/plantiumai/02_tasks",
-    "doc/10_projects/Colaborador1/plantiumai/00_spec",
-    "doc/10_projects/Colaborador1/penetrometro/03_context",
-    "doc/10_projects/Colaborador1/ignisengine/03_context",
-    "doc/10_projects/Colaborador1/ignisengine/02_tasks",
-    "doc/10_projects/Colaborador1/ignisengine/01_plan",
-    "doc/10_projects/Colaborador1/ignisengine/00_spec",
+    "skills/parallaxes-integration/SKILL.md",
+    "skills/parallaxes-integration",
+    "skills/parallaxes-debugging/SKILL.md",
+    "skills/parallaxes-debugging",
+    "skills/page-transitions-setup/SKILL.md",
+    "skills/page-transitions-setup",
+    "skills/page-transitions-security/SKILL.md",
+    "skills/page-transitions-security",
+    "skills/page-transitions-optimization/SKILL.md",
+    "skills/page-transitions-optimization",
+    "skills/page-transitions-integration/SKILL.md",
+    "skills/page-transitions-integration",
+    "doc/concepts/tauri-icons-build.md",
+    "doc/concepts/tauri-filePath-export-csv.md",
+    "doc/concepts",
+    "skills/css-keyframes-setup/SKILL.md",
+    "skills/css-keyframes-setup",
+    "skills/css-keyframes-security/SKILL.md",
+    "skills/css-keyframes-security",
+    "skills/css-keyframes-optimization/SKILL.md",
+    "skills/css-keyframes-optimization",
+    "skills/css-keyframes-integration/SKILL.md",
+    "skills/css-keyframes-debugging/SKILL.md",
+    "skills/canvas-rendering-setup/SKILL.md",
+    "skills/canvas-rendering-security/SKILL.md",
+    "skills/canvas-rendering-optimization/SKILL.md",
+    "skills/canvas-rendering-integration/SKILL.md",
+    "skills/canvas-rendering-debugging/SKILL.md",
+    "skills/framer-motion-debugging/SKILL.md",
+    "skills/parallaxes-security/SKILL.md",
+    "skills/parallaxes-optimization/SKILL.md",
+    "skills/reduced-motion-acc-debugging/SKILL.md",
+    "skills/particles-float-security/SKILL.md",
+    "skills/particles-float-optimization/SKILL.md",
+    "skills/particles-float-integration/SKILL.md",
+    "skills/particles-float-debugging/SKILL.md",
     "Sem título.canvas"
   ]
 }

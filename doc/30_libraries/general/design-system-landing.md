@@ -30,3 +30,4 @@ Design system da PlantiumAI para a **landing institucional** (investidores): tem
 - [[10_projects/Colaborador1/general/desktop-app-estrutura]]
 - [[10_projects/Colaborador1/general/novo-sistema-arquitetura]]
 - [[10_projects/Colaborador1/general/plataforma-web-arquitetura]]
+- [[30_libraries/general/design-strategic-animations]]
