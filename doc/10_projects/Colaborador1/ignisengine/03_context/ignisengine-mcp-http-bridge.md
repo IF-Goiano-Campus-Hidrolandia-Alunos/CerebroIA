@@ -76,11 +76,34 @@ dependências no `pom.xml`**).
 
 ---
 
-## 4. Ferramentas registradas (v1)
+## 4. Ferramentas registradas
 
-`get_project_tree`, `list_scripts`, `read_script`, `write_script`, `create_script`,
-`compile_project`, `read_file` (com proteção anti path-traversal). Todas delegam ao
-`com.ignis.core.ScriptManager` do projeto ativo.
+**Base (sempre, 7):** `get_project_tree`, `list_scripts`, `read_script`,
+`write_script`, `create_script`, `compile_project`, `read_file` (anti
+path-traversal). Delegam ao `com.ignis.core.ScriptManager` do projeto ativo.
+
+**Cena e Play (+8, só com editor vivo):** quando o bridge roda dentro do editor
+JavaFX, o `IgnisEditorApp` registra o contexto vivo via
+`McpService.setEditorContext(game, play, stop, refresh, save)` →
+`IgnisToolRegistry.attachLiveEditor(...)`, habilitando:
+
+| Ferramenta | Args | Efeito |
+|-----------|------|--------|
+| `list_scene_objects` | — | Lista GameObjects da cena |
+| `create_object` | `name`,`type?`,`x?`,`y?`,`width?`,`height?` | Cria forma (square/circle/triangle/star/pentagon/player) |
+| `set_object_transform` | `name`,`x?`,`y?`,`width?`,`height?`,`rotation?` | Move/redimensiona/rotaciona |
+| `set_object_sprite` | `name`,`path` | Define sprite |
+| `attach_script` | `objectName`,`scriptName` | Anexa IgnisScript |
+| `play_game` / `stop_game` | — | Play/Stop reais do editor |
+| `save_project` | — | Salva a cena `.ignis` |
+
+Como `GameObject` é abstrato, `create_object` usa fábrica de formas concretas. Os
+hooks chamam os métodos reais do editor (`playWorld`/`stopWorld`/`refreshHierarchy`/
+`saveProjectSilently`) na thread de UI. No modo headless (`--mcp`) só existem as 7
+base. **Exige reiniciar o editor após rebuild** (Java não tem hot-reload).
+
+Assim um agente monta e testa um jogo de ponta a ponta pela URL: criar objetos →
+anexar script → salvar → Play → observar → Stop.
 
 ---
 
