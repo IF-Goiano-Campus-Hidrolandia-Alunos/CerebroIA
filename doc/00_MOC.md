@@ -44,6 +44,7 @@ Notas atômicas sobre regras de negócio, padrões, tecnologias.
 - [[10_projects/Colaborador1/ignisengine/00_spec/ignisengine-decisoes-arquiteturais]]
 - [[10_projects/Colaborador1/ignisengine/00_spec/ignisengine-mcp-integration-spec]]
 - [[10_projects/Colaborador1/ignisengine/03_context/ignisengine-mcp-architecture]]
+- [[10_projects/Colaborador1/ignisengine/03_context/ignisengine-mcp-implementation]]
 - [[30_libraries/general/integracao-dashboard-pos-login]]
 - [[10_projects/Colaborador1/plantiumai/03_context/plantiumai-features-pos-login]]
 - [[10_projects/Colaborador1/plantiumai/03_context/plantiumai-responsividade-mobile]]
