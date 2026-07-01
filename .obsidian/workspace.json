@@ -185,12 +185,12 @@
   },
   "active": "461ef3643881b3dd",
   "lastOpenFiles": [
-    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-mcp-implementation.md",
     "videos/assets/logo_plantiumai.png",
     "doc/40_external_cache/especificacao-plantiumai.md",
     "doc/10_projects/Colaborador1/plantiumai/03_context/seguranca-fluxo-reset-senha.md",
     "doc/10_projects/Colaborador1/plantiumai/03_context/plantiumai-features-pos-login.md",
     "doc/10_projects/Colaborador1/plantiumai/03_context/narrativa-oficial-plantiumai.md",
+    "doc/10_projects/Colaborador1/ignisengine/03_context/ignisengine-mcp-implementation.md",
     "skills/parallaxes-integration/SKILL.md",
     "skills/parallaxes-integration",
     "skills/parallaxes-debugging/SKILL.md",
@@ -221,7 +221,6 @@
     "skills/canvas-rendering-debugging/SKILL.md",
     "skills/framer-motion-debugging/SKILL.md",
     "skills/parallaxes-security/SKILL.md",
-    "skills/parallaxes-optimization/SKILL.md",
     "Sem título.canvas"
   ]
 }
