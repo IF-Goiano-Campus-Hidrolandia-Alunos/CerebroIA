@@ -93,6 +93,7 @@ JavaFX, o `IgnisEditorApp` registra o contexto vivo via
 | `create_object` | `name`,`type?`,`x?`,`y?`,`width?`,`height?` | Cria forma (square/circle/triangle/star/pentagon/player) |
 | `set_object_transform` | `name`,`x?`,`y?`,`width?`,`height?`,`rotation?` | Move/redimensiona/rotaciona |
 | `set_object_sprite` | `name`,`path` | Define sprite |
+| `delete_object` | `name` | Remove objeto da cena |
 | `attach_script` | `objectName`,`scriptName` | Anexa IgnisScript |
 | `play_game` / `stop_game` | — | Play/Stop reais do editor |
 | `save_project` | — | Salva a cena `.ignis` |
